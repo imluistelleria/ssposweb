@@ -1,0 +1,31 @@
+<svg width="77" height="77" viewBox="0 0 77 77" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Smartphone body - back shadow -->
+<rect x="16" y="4" width="45" height="69" rx="6" fill="#D1E7E8"/>
+<!-- Smartphone body - main -->
+<rect x="13" y="0" width="45" height="69" rx="6" fill="#F2F8F4"/>
+<!-- Smartphone body - right half darker -->
+<rect x="35.5" y="0" width="22.5" height="69" rx="0" fill="#D1E7E8"/>
+<path d="M58 0H52v69h6c3.314 0 6-2.686 6-6V6c0-3.314-2.686-6-6-6z" fill="#D1E7E8"/>
+<!-- Screen area -->
+<rect x="18" y="10" width="35" height="49" rx="2" fill="#143D66"/>
+<!-- Screen right half -->
+<rect x="35.5" y="10" width="17.5" height="49" rx="0" fill="#0F1E32"/>
+<path d="M53 59H51V10h2c1.1 0 2 .9 2 2v45c0 1.1-.9 2-2 2z" fill="#0F1E32"/>
+<!-- Barcode lines on screen -->
+<rect x="23" y="18" width="3" height="32" rx="1" fill="#0DDED1"/>
+<rect x="28" y="18" width="2" height="32" rx="1" fill="#F2F8F4" opacity="0.6"/>
+<rect x="32" y="18" width="4" height="32" rx="1" fill="#0DDED1"/>
+<rect x="38" y="18" width="2" height="32" rx="1" fill="#F2F8F4" opacity="0.6"/>
+<rect x="42" y="18" width="3" height="32" rx="1" fill="#0DDED1"/>
+<rect x="47" y="18" width="2" height="32" rx="1" fill="#F2F8F4" opacity="0.6"/>
+<!-- Scan line -->
+<rect x="20" y="33" width="31" height="2.5" rx="1.25" fill="#0DDED1" opacity="0.8"/>
+<!-- Home button / bottom indicator -->
+<rect x="30" y="63" width="11" height="2.5" rx="1.25" fill="#143D66"/>
+<!-- Data signal waves - right side -->
+<path d="M63 25c3.5 0 6.5 2.5 8 6" stroke="#0DDED1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+<path d="M63 32c2 0 3.8 1.5 4.5 3.5" stroke="#0DDED1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+<!-- Data signal waves - left side -->
+<path d="M8 25c-3.5 0-6.5 2.5-8 6" stroke="#0DDED1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+<path d="M8 32c-2 0-3.8 1.5-4.5 3.5" stroke="#0DDED1" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>

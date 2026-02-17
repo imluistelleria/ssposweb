@@ -1,0 +1,52 @@
+<svg width="211" height="500" viewBox="0 0 211 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- POS Terminal Body -->
+  <!-- Receipt Printer Top Section -->
+  <rect x="10" y="0" width="191" height="130" rx="12" fill="#E8E8E8"/>
+  <rect x="20" y="8" width="171" height="110" rx="8" fill="#F5F5F5"/>
+  <!-- Receipt slot -->
+  <rect x="40" y="45" width="131" height="50" rx="6" fill="white" stroke="#D0D0D0" stroke-width="1"/>
+  <!-- SuperSonic POS text on receipt -->
+  <text x="105" y="68" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="bold" font-style="italic" fill="#AAAAAA">SuperSonic</text>
+  <text x="105" y="82" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#999999">POS</text>
+  <!-- Speaker dots -->
+  <circle cx="105" cy="112" r="1.5" fill="#C0C0C0"/>
+  <circle cx="111" cy="112" r="1.5" fill="#C0C0C0"/>
+  <circle cx="99" cy="112" r="1.5" fill="#C0C0C0"/>
+
+  <!-- Main Device Body -->
+  <rect x="0" y="125" width="211" height="375" rx="16" fill="white" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Screen bezel -->
+  <rect x="8" y="135" width="195" height="345" rx="10" fill="#1a1a2e"/>
+
+  <!-- Screen Content - Blue gradient background -->
+  <defs>
+    <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5EB8D4"/>
+      <stop offset="100%" stop-color="#3A9BC0"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="167" width="175" height="303" rx="4" fill="url(#screenGrad)"/>
+
+  <!-- Status bar -->
+  <rect x="18" y="145" width="175" height="22" rx="4" fill="#0a0a1a"/>
+  <!-- Camera notch -->
+  <circle cx="105" cy="156" r="4" fill="#1a1a2e" stroke="#2a2a3e" stroke-width="1"/>
+  <circle cx="105" cy="156" r="2" fill="#2a2a3e"/>
+
+  <!-- Contactless payment icon on screen -->
+  <g transform="translate(76, 280)">
+    <!-- Tap icon hand -->
+    <circle cx="30" cy="30" r="20" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <!-- Wave lines -->
+    <path d="M22 18 Q30 8 38 18" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M18 12 Q30 -2 42 12" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M14 6 Q30 -12 46 6" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Hand/finger -->
+    <path d="M35 40 L40 48 L32 50 L28 44 Z" fill="rgba(255,255,255,0.5)"/>
+    <path d="M40 48 L44 42 L46 46 L42 52 L32 50 Z" fill="rgba(255,255,255,0.4)"/>
+  </g>
+
+  <!-- Home indicator at bottom -->
+  <rect x="76" y="470" width="60" height="4" rx="2" fill="#E0E0E0"/>
+</svg>

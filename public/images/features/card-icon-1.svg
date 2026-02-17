@@ -1,0 +1,55 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Isometric POS Terminal -->
+  <g transform="translate(15, 15)">
+    <!-- Shadow -->
+    <ellipse cx="90" cy="172" rx="55" ry="8" fill="#E0E8F0" opacity="0.4"/>
+
+    <!-- Receipt Printer - Top (angled) -->
+    <g transform="rotate(-8, 85, 60)">
+      <rect x="30" y="8" width="110" height="60" rx="10" fill="#E0E4EA"/>
+      <rect x="36" y="13" width="98" height="48" rx="7" fill="#ECEEF2"/>
+      <!-- Receipt slot -->
+      <rect x="48" y="25" width="74" height="24" rx="4" fill="white" stroke="#D0D4DA" stroke-width="0.8"/>
+      <text x="85" y="38" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="700" font-style="italic" fill="#B0B4BA">SuperSonic</text>
+      <text x="85" y="47" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#A0A4AA">POS</text>
+      <!-- Speaker dots -->
+      <circle cx="82" cy="56" r="1.2" fill="#C0C4CA"/>
+      <circle cx="86" cy="56" r="1.2" fill="#C0C4CA"/>
+      <circle cx="90" cy="56" r="1.2" fill="#C0C4CA"/>
+    </g>
+
+    <!-- Main Device Body -->
+    <g transform="rotate(-8, 85, 110)">
+      <rect x="18" y="62" width="134" height="115" rx="14" fill="white" stroke="#E0E4EA" stroke-width="0.8"/>
+      <!-- Screen bezel -->
+      <rect x="26" y="68" width="118" height="96" rx="8" fill="#1A1A2E"/>
+      <!-- Status bar area -->
+      <rect x="32" y="73" width="106" height="12" rx="4" fill="#0A0A1A"/>
+      <!-- Camera dot -->
+      <circle cx="85" cy="79" r="2.5" fill="#2A2A3E"/>
+
+      <!-- Screen Content - Gradient -->
+      <defs>
+        <linearGradient id="fg1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#5EB8D4"/>
+          <stop offset="100%" stop-color="#3A9BC0"/>
+        </linearGradient>
+      </defs>
+      <rect x="32" y="85" width="106" height="72" rx="3" fill="url(#fg1)"/>
+
+      <!-- Contactless icon on screen -->
+      <g transform="translate(66, 102)">
+        <circle cx="19" cy="19" r="12" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+        <path d="M14 12 Q19 5 24 12" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M11 8 Q19 -1 27 8" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M8 4 Q19 -7 30 4" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.3" stroke-linecap="round"/>
+        <!-- Hand -->
+        <path d="M22 26 L26 32 L20 34 L17 29 Z" fill="rgba(255,255,255,0.4)"/>
+        <path d="M26 32 L29 28 L31 31 L27 35 L20 34 Z" fill="rgba(255,255,255,0.3)"/>
+      </g>
+
+      <!-- Home indicator -->
+      <rect x="68" y="163" width="34" height="3" rx="1.5" fill="#E0E4EA"/>
+    </g>
+  </g>
+</svg>
