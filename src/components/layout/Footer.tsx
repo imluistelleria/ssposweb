@@ -33,11 +33,11 @@ export default function Footer() {
           }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <Image
-              src="/images/logo/logo-dark.svg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo/sspos-logo-color.svg"
               alt="SuperSonic POS"
-              width={83}
-              height={83}
+              style={{ height: "80px", width: "auto", alignSelf: "flex-start" }}
             />
             <p
               style={{

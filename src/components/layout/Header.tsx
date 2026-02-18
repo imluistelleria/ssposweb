@@ -170,12 +170,11 @@ export default function Header() {
           href="/"
           style={{ display: "flex", alignItems: "center" }}
         >
-          <Image
-            src="/images/logo/logo-white.svg"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo/sspos-logo-white.svg"
             alt="SuperSonic POS"
-            width={46}
-            height={46}
-            priority
+            style={{ height: "56px", width: "auto" }}
           />
         </a>
 

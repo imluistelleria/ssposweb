@@ -177,10 +177,14 @@ export default function DesignSystem() {
           <SubSection title="Logo Files">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px" }}>
               {[
-                { file: "logo-dark.svg", bg: "#ffffff", border: true, label: "Dark on White (SVG)" },
-                { file: "logo-white.svg", bg: "var(--color-primary)", border: false, label: "White on Teal (SVG)" },
-                { file: "logo-dark.png", bg: "#ffffff", border: true, label: "Dark on White (PNG)" },
-                { file: "logo-white.png", bg: "var(--color-gray-900)", border: false, label: "White on Dark (PNG)" },
+                { file: "sspos-logo-color.svg", bg: "#ffffff", border: true, label: "SSPOS Color (SVG)" },
+                { file: "sspos-logo-white.svg", bg: "var(--color-primary)", border: false, label: "SSPOS White (SVG)" },
+                { file: "sscloud-logo-color.svg", bg: "#ffffff", border: true, label: "SSCloud Color (SVG)" },
+                { file: "sscloud-logo-white.svg", bg: "var(--color-primary)", border: false, label: "SSCloud White (SVG)" },
+                { file: "sspay-logo-color.svg", bg: "#ffffff", border: true, label: "SSPay Color (SVG)" },
+                { file: "sspay-logo-white.svg", bg: "var(--color-primary)", border: false, label: "SSPay White (SVG)" },
+                { file: "sspetro-logo-color.svg", bg: "#ffffff", border: true, label: "SSPetro Color (SVG)" },
+                { file: "sspetro-logo-white.svg", bg: "var(--color-primary)", border: false, label: "SSPetro White (SVG)" },
               ].map((l) => (
                 <div key={l.file} style={{ textAlign: "center" }}>
                   <div style={{ background: l.bg, borderRadius: "12px", padding: "32px 24px", display: "flex", alignItems: "center", justifyContent: "center", border: l.border ? "1px solid var(--color-gray-200)" : "none", minHeight: "100px" }}>
@@ -197,10 +201,10 @@ export default function DesignSystem() {
           <SubSection title="Logo on Backgrounds">
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
               {[
-                { bg: "#ffffff", logo: "logo-dark.svg", label: "White background", border: true },
-                { bg: "var(--color-primary)", logo: "logo-white.svg", label: "Teal background", border: false },
-                { bg: "var(--color-gray-900)", logo: "logo-white.svg", label: "Dark background", border: false },
-                { bg: "linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)", logo: "logo-white.svg", label: "Gradient background", border: false },
+                { bg: "#ffffff", logo: "sspos-logo-color.svg", label: "White background", border: true },
+                { bg: "var(--color-primary)", logo: "sspos-logo-white.svg", label: "Teal background", border: false },
+                { bg: "var(--color-gray-900)", logo: "sspos-logo-white.svg", label: "Dark background", border: false },
+                { bg: "linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)", logo: "sspos-logo-white.svg", label: "Gradient background", border: false },
               ].map((item) => (
                 <div key={item.label} style={{ textAlign: "center" }}>
                   <div style={{ background: item.bg, borderRadius: "12px", padding: "24px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80px", border: item.border ? "1px solid var(--color-gray-200)" : "none" }}>
@@ -217,7 +221,7 @@ export default function DesignSystem() {
             <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
               <div style={{ border: "2px dashed var(--color-primary)", borderRadius: "12px", padding: "32px 48px", position: "relative", background: "white" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/logo-dark.svg" alt="Logo with clear space" style={{ height: "46px", width: "auto", display: "block" }} />
+                <img src="/images/logo/sspos-logo-color.svg" alt="Logo with clear space" style={{ height: "46px", width: "auto", display: "block" }} />
                 <SpecCallout label="1x height" />
                 <div style={{ position: "absolute", top: "8px", left: "50%", transform: "translateX(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
                 <div style={{ position: "absolute", bottom: "8px", left: "50%", transform: "translateX(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
@@ -393,7 +397,7 @@ export default function DesignSystem() {
             <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
               <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/logo-white.svg" alt="Profile picture" style={{ height: "50px", width: "auto" }} />
+                <img src="/images/logo/sspos-logo-white.svg" alt="Profile picture" style={{ height: "50px", width: "auto" }} />
               </div>
               <div>
                 <p style={{ fontSize: "14px", color: "var(--color-gray-900)", fontWeight: 700, marginBottom: "4px" }}>Logo mark on teal circle</p>
@@ -406,7 +410,7 @@ export default function DesignSystem() {
             <MockupFrame label="Cover photo — teal gradient with tagline" height="160px" bg="linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)">
               <div style={{ textAlign: "center", color: "white" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/logo-white.svg" alt="" style={{ height: "36px", width: "auto", marginBottom: "12px" }} />
+                <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "36px", width: "auto", marginBottom: "12px" }} />
                 <p style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "-0.3px" }}>Shrink Shrinkage. Operate Anywhere. Drive Sales.</p>
               </div>
             </MockupFrame>
@@ -470,7 +474,7 @@ export default function DesignSystem() {
                   <div style={{ width: "110px", height: "90px", background: "#2a2d52", borderRadius: "6px", marginBottom: "8px" }} />
                   <div style={{ position: "absolute", bottom: "12px", left: "50%", transform: "translateX(-50%)" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "16px", width: "auto" }} />
+                    <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "16px", width: "auto" }} />
                   </div>
                   <div style={{ position: "absolute", top: "115px", right: "-60px", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>
                     <SpecCallout label="Logo zone" />
@@ -481,7 +485,7 @@ export default function DesignSystem() {
                 <div style={{ width: "60px", height: "200px", background: "var(--color-gray-900)", borderRadius: "8px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <div style={{ transform: "rotate(-90deg)", whiteSpace: "nowrap" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
+                    <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
                   </div>
                 </div>
               </MockupFrame>
@@ -493,7 +497,7 @@ export default function DesignSystem() {
               <MockupFrame label="Product box — front panel" width="200px" height="260px" bg="var(--color-primary)">
                 <div style={{ color: "white", textAlign: "center", padding: "16px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/logo/logo-white.svg" alt="" style={{ height: "28px", width: "auto", marginBottom: "20px" }} />
+                  <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "28px", width: "auto", marginBottom: "20px" }} />
                   <div style={{ width: "80px", height: "100px", background: "rgba(255,255,255,0.15)", borderRadius: "8px", margin: "0 auto 16px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", opacity: 0.7 }}>Product Photo</div>
                   <p style={{ fontSize: "14px", fontWeight: 900 }}>VP550</p>
                   <p style={{ fontSize: "10px", opacity: 0.7 }}>Smart POS Terminal</p>
@@ -621,7 +625,7 @@ export default function DesignSystem() {
                   </div>
                   <div style={{ textAlign: "right" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "24px", width: "auto" }} />
+                    <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "24px", width: "auto" }} />
                   </div>
                 </div>
               </MockupFrame>
@@ -681,7 +685,7 @@ export default function DesignSystem() {
                 <div style={{ width: "240px", height: "140px", background: "white", borderRadius: "8px", border: "1px solid var(--color-gray-200)", padding: "20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-dark.svg" alt="" style={{ height: "20px", width: "auto", marginBottom: "12px" }} />
+                    <img src="/images/logo/sspos-logo-color.svg" alt="" style={{ height: "20px", width: "auto", marginBottom: "12px" }} />
                     <p style={{ fontSize: "13px", fontWeight: 900, color: "var(--color-gray-900)" }}>John Smith</p>
                     <p style={{ fontSize: "10px", color: "var(--color-gray-500)" }}>Regional Sales Manager</p>
                   </div>
@@ -694,7 +698,7 @@ export default function DesignSystem() {
               <MockupFrame label='Back — 3.5"×2"' height="180px">
                 <div style={{ width: "240px", height: "140px", background: "var(--color-primary)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "8px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/logo/logo-white.svg" alt="" style={{ height: "28px", width: "auto" }} />
+                  <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "28px", width: "auto" }} />
                   <p style={{ fontSize: "8px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.5px" }}>supersonic-pos.com</p>
                 </div>
               </MockupFrame>
@@ -716,7 +720,7 @@ export default function DesignSystem() {
                 <div style={{ width: "170px", height: "240px", background: "white", borderRadius: "4px", border: "1px solid var(--color-gray-200)", padding: "16px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                   <div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-dark.svg" alt="" style={{ height: "16px", width: "auto", marginBottom: "24px" }} />
+                    <img src="/images/logo/sspos-logo-color.svg" alt="" style={{ height: "16px", width: "auto", marginBottom: "24px" }} />
                     <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                       {[1, 2, 3, 4, 5].map((i) => (
                         <div key={i} style={{ height: "3px", background: "var(--color-gray-100)", borderRadius: "2px", width: i === 5 ? "60%" : "100%" }} />
@@ -757,7 +761,7 @@ export default function DesignSystem() {
                 <div style={{ width: "170px", height: "240px", background: "white", borderRadius: "4px", border: "1px solid var(--color-gray-200)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
                   <div style={{ background: "var(--color-primary)", padding: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
+                    <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
                     <span style={{ color: "white", fontSize: "8px", fontWeight: 900 }}>Product Name</span>
                   </div>
                   <div style={{ flex: 1, padding: "10px", display: "flex", flexDirection: "column", gap: "6px" }}>
@@ -1653,7 +1657,7 @@ export default function DesignSystem() {
                 { name: "Border", value: "1px solid rgba(255,255,255,0.1)" },
                 { name: "Layout", value: "Flex, space-between, centered items" },
                 { name: "Nav links", value: "16px / 24px / weight 700, white, gap 32px" },
-                { name: "Logo", value: "46×46px, /images/logo/logo-white.svg" },
+                { name: "Logo", value: "52px height × auto width, /images/logo/sspos-logo-white.svg" },
               ]}
             />
           </SubSection>
@@ -1817,7 +1821,7 @@ type IndustryGroup = { label: string; items: { icon: string; label: string }[] }
 │       └── data.ts              # All static data arrays + types
 ├── public/
 │   └── images/
-│       ├── logo/                # logo-white.svg, logo-dark.svg
+│       ├── logo/                # ss{pos,cloud,pay,petro}-logo-{color,white}.svg
 │       ├── menu/                # Platform dropdown icons (32px)
 │       ├── industries/          # Industry dropdown icons (40px gradient)
 │       ├── payments/            # Payment dropdown icons (40px gradient)
