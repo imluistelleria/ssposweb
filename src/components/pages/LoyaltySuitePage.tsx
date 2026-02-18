@@ -105,6 +105,36 @@ function WhiteGrid() {
   );
 }
 
+/* ───── Shared: Floating Icon Bubble ───── */
+
+function FloatingIcon({
+  bg,
+  style,
+  children,
+}: {
+  bg: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      style={{
+        width: 44,
+        height: 44,
+        borderRadius: "50%",
+        background: bg,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 /* ───── Shared: Floating Avatar ───── */
 
 function Avatar({
@@ -483,79 +513,30 @@ function EffortlessCheckout() {
             </svg>
           </div>
 
-          {/* Floating emoji icons */}
-          <div
-            style={{
-              position: "absolute",
-              top: "12%",
-              right: "18%",
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              background: "#fef3c7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "20px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-            }}
-          >
-            ⭐
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              top: "25%",
-              left: "12%",
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              background: "#dbeafe",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "20px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-            }}
-          >
-            💬
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "18%",
-              right: "14%",
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              background: "#d1fae5",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "20px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-            }}
-          >
-            🤝
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "30%",
-              left: "16%",
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              background: "#ede9fe",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "20px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-            }}
-          >
-            👤
-          </div>
+          {/* Floating icons */}
+          <FloatingIcon bg="#fef3c7" style={{ position: "absolute", top: "12%", right: "18%" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#f59e0b" strokeWidth="1.5" fill="none" />
+            </svg>
+          </FloatingIcon>
+          <FloatingIcon bg="#dbeafe" style={{ position: "absolute", top: "25%", left: "12%" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#3b82f6" strokeWidth="1.5" fill="none" />
+            </svg>
+          </FloatingIcon>
+          <FloatingIcon bg="#d1fae5" style={{ position: "absolute", bottom: "18%", right: "14%" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#10b981" strokeWidth="1.5" fill="none" />
+              <path d="M12 11v6M9 14h6" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" />
+              <rect x="8" y="2" width="8" height="4" rx="1" stroke="#10b981" strokeWidth="1.5" fill="none" />
+            </svg>
+          </FloatingIcon>
+          <FloatingIcon bg="#ede9fe" style={{ position: "absolute", bottom: "30%", left: "16%" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#8b5cf6" strokeWidth="1.5" fill="none" />
+              <circle cx="12" cy="7" r="4" stroke="#8b5cf6" strokeWidth="1.5" fill="none" />
+            </svg>
+          </FloatingIcon>
         </div>
 
         {/* Right — Text content */}
@@ -927,79 +908,206 @@ function getMapDot(col: number, row: number): boolean {
 
 /* ───── 4. LOYALTY THAT FITS YOUR BUSINESS ───── */
 
+/* SVG Icon components for feature cards (24×24, gray-900 stroke, 1.5 weight) */
+
+function IconPhone() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="5" y="2" width="14" height="20" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <line x1="9" y1="18" x2="15" y2="18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconCustomerId() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <circle cx="12" cy="10" r="3" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M6.5 19.5C7.5 16.5 9.5 15 12 15C14.5 15 16.5 16.5 17.5 19.5" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconTrendingUp() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <polyline points="23,6 13.5,15.5 8.5,10.5 1,18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="17,6 23,6 23,12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconGiftCalendar() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="8" width="18" height="13" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M12 8V21" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M3 12H21" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M7.5 8C7.5 8 7.5 4 10 4C12.5 4 12 8 12 8" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M16.5 8C16.5 8 16.5 4 14 4C11.5 4 12 8 12 8" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconNfcCard() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M9 12C9 10.34 10.34 9 12 9" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 12C7 9.24 9.24 7 12 7" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M5 12C5 8.13 8.13 5 12 5" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="1" fill="var(--color-gray-900)" />
+    </svg>
+  );
+}
+
+function IconSettings() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <line x1="4" y1="6" x2="20" y2="6" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="4" y1="12" x2="20" y2="12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="4" y1="18" x2="20" y2="18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="8" cy="6" r="2" fill="var(--color-white)" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <circle cx="16" cy="12" r="2" fill="var(--color-white)" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <circle cx="10" cy="18" r="2" fill="var(--color-white)" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+/* Advanced plan icons */
+
+function IconTarget() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="6" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function IconBarChart() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="12" width="4" height="9" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <rect x="10" y="7" width="4" height="14" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <rect x="17" y="3" width="4" height="18" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function IconTrophy() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M8 21H16" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M12 17V21" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M7 4H17V8C17 11.31 14.76 14 12 14C9.24 14 7 11.31 7 8V4Z" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M7 7H4C4 10 5.5 11 7 11" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M17 7H20C20 10 18.5 11 17 11" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconBell() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 8A6 6 0 1 0 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M13.73 21A2 2 0 0 1 10.27 21" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconLink() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconABTest() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 const loyaltyBasicFeatures = [
   {
-    icon: "📱",
-    title: "Phone Number Enrollment",
+    icon: <IconPhone />,
+    title: "One-tap phone number enrollment",
     description:
-      "Customers sign up with their phone number — no apps, no cards, no hassle.",
+      "Customers enter their phone number once and begin earning rewards immediately. No apps, cards, or accounts required.",
   },
   {
-    icon: "🆔",
-    title: "Customer Identification",
+    icon: <IconCustomerId />,
+    title: "Built-in customer identification",
     description:
-      "Instantly recognize returning customers at checkout for a personalized experience.",
+      "Returning customers are automatically recognized at checkout, allowing participation to happen naturally during transactions.",
   },
   {
-    icon: "⭐",
-    title: "Automatic Points Accrual",
+    icon: <IconTrendingUp />,
+    title: "Automatic points and rewards",
     description:
-      "Points accumulate automatically with every purchase — nothing extra to scan or swipe.",
+      "Points calculate and rewards apply in the background. No extra steps, no training, no slowdown at the counter.",
   },
   {
-    icon: "🎁",
-    title: "Flexible Reward Redemption",
+    icon: <IconGiftCalendar />,
+    title: "Flexible reward structures",
     description:
-      "Let customers redeem points for discounts, free items, or custom rewards you define.",
+      'Run points-per-dollar programs, punch-style rewards, time-based promotions, or "Buy X, Get 1 Free" offers.',
   },
   {
-    icon: "💳",
-    title: "NFC Gift Cards",
+    icon: <IconNfcCard />,
+    title: "Virtual and NFC-enabled gift cards",
     description:
-      "Sell and reload branded gift cards that tap to pay — a revenue stream that markets itself.",
+      "Support digital gift cards printed on receipts, with NFC compatibility built in.",
   },
   {
-    icon: "⚙️",
-    title: "Quick Setup & Management",
+    icon: <IconSettings />,
+    title: "Simple setup and management",
     description:
-      "Configure loyalty rules from your back office in minutes. No IT team needed.",
+      "Configure rewards and rules directly through the POS or back office. No third-party systems required.",
   },
 ];
 
 const loyaltyAdvancedFeatures = [
   {
-    icon: "🎯",
-    title: "Targeted Promotions",
+    icon: <IconTarget />,
+    title: "Targeted promotions",
     description:
       "Send personalized offers based on purchase history, visit frequency, and spend patterns.",
   },
   {
-    icon: "📊",
-    title: "Advanced Analytics",
+    icon: <IconBarChart />,
+    title: "Advanced analytics",
     description:
       "Track loyalty program ROI, redemption rates, and customer lifetime value in real time.",
   },
   {
-    icon: "🏆",
-    title: "Tiered Rewards",
+    icon: <IconTrophy />,
+    title: "Tiered rewards",
     description:
       "Create Bronze, Silver, and Gold tiers that reward your most loyal customers with bigger perks.",
   },
   {
-    icon: "🔔",
-    title: "Automated Engagement",
+    icon: <IconBell />,
+    title: "Automated engagement",
     description:
       "Trigger messages when customers hit milestones, haven't visited in a while, or have a birthday.",
   },
   {
-    icon: "🔗",
-    title: "Multi-Store Sync",
+    icon: <IconLink />,
+    title: "Multi-store sync",
     description:
       "Customers earn and redeem across all your locations with a single unified loyalty account.",
   },
   {
-    icon: "📈",
-    title: "A/B Campaign Testing",
+    icon: <IconABTest />,
+    title: "A/B campaign testing",
     description:
       "Test different reward structures and promotions to find what drives the most repeat visits.",
   },
@@ -1022,110 +1130,139 @@ function LoyaltyFits() {
           maxWidth: "var(--max-width-content)",
           margin: "0 auto",
           padding: "0 var(--page-padding)",
-          textAlign: "center",
         }}
       >
-        <p
-          style={{
-            fontSize: "var(--text-body-sm)",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: "var(--tracking-caps)",
-            color: "var(--color-primary)",
-            marginBottom: "var(--space-4)",
-          }}
-        >
-          Two Plans. One Goal.
-        </p>
-        <h2
-          style={{
-            fontSize: "var(--text-h1)",
-            lineHeight: "var(--leading-tight)",
-            fontWeight: 900,
-            color: "var(--color-text-heading)",
-            marginBottom: "var(--space-8)",
-            maxWidth: "700px",
-            margin: "0 auto var(--space-8)",
-          }}
-        >
-          Loyalty that fits your business, not the other way around
-        </h2>
-
-        {/* Toggle tabs */}
-        <div
-          style={{
-            display: "inline-flex",
-            background: "var(--color-white)",
-            borderRadius: "var(--radius-full)",
-            padding: "4px",
-            marginBottom: "var(--space-12)",
-            border: "1px solid var(--color-border)",
-          }}
-        >
-          <button
-            onClick={() => setActiveTab("basic")}
+        {/* Centered heading + subtitle */}
+        <div style={{ textAlign: "center", marginBottom: "var(--space-12)" }}>
+          <h2
             style={{
-              padding: "12px 28px",
-              borderRadius: "var(--radius-full)",
-              border: "none",
-              fontSize: "var(--text-body)",
-              fontWeight: 700,
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-              background:
-                activeTab === "basic"
-                  ? "var(--color-primary)"
-                  : "transparent",
-              color:
-                activeTab === "basic"
-                  ? "var(--color-white)"
-                  : "var(--color-text-body)",
+              fontSize: "var(--text-h1)",
+              lineHeight: "var(--leading-tight)",
+              fontWeight: 900,
+              color: "var(--color-text-heading)",
+              marginBottom: "var(--space-4)",
             }}
           >
-            SuperSonic Loyalty
-          </button>
-          <button
-            onClick={() => setActiveTab("advanced")}
+            Loyalty that fits your business, not the other way around
+          </h2>
+          <p
             style={{
-              padding: "12px 28px",
-              borderRadius: "var(--radius-full)",
-              border: "none",
-              fontSize: "var(--text-body)",
-              fontWeight: 700,
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-              background:
-                activeTab === "advanced"
-                  ? "var(--color-primary)"
-                  : "transparent",
-              color:
-                activeTab === "advanced"
-                  ? "var(--color-white)"
-                  : "var(--color-text-body)",
+              fontSize: "var(--text-body-lg)",
+              lineHeight: "var(--leading-relaxed)",
+              color: "var(--color-text-body)",
+              maxWidth: "720px",
+              margin: "0 auto",
             }}
           >
-            SuperSonic Advanced Loyalty
-          </button>
+            The SuperSonic Loyalty Suite gives you flexible options based on how
+            much control and insight you want, without forcing third-party
+            systems or complicated workflows.
+          </p>
         </div>
 
-        {/* Section subheading */}
-        <h3
+        {/* Split row: left text, right toggle */}
+        <div
           style={{
-            fontSize: "var(--text-h3)",
-            fontWeight: 800,
-            color: "var(--color-text-heading)",
-            marginBottom: "var(--space-2)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            marginBottom: "var(--space-8)",
+            flexWrap: "wrap",
+            gap: "var(--space-6)",
           }}
         >
-          {activeTab === "basic"
-            ? "Simple loyalty. Built for everyday checkout."
-            : "Advanced loyalty. Built for growth-focused retailers."}
-        </h3>
+          <div style={{ maxWidth: "560px" }}>
+            <h3
+              style={{
+                fontSize: "var(--text-h4)",
+                fontWeight: 800,
+                color: "var(--color-text-heading)",
+                marginBottom: "var(--space-2)",
+              }}
+            >
+              {activeTab === "basic"
+                ? "Simple loyalty. Built for everyday checkout."
+                : "Advanced loyalty. Built for growth-focused retailers."}
+            </h3>
+            <p
+              style={{
+                fontSize: "var(--text-body-sm)",
+                lineHeight: "var(--leading-relaxed)",
+                color: "var(--color-text-body)",
+              }}
+            >
+              {activeTab === "basic"
+                ? "For retailers who want repeat visits without added complexity, SuperSonic Loyalty delivers a built-in experience that works seamlessly at the register from day one."
+                : "For retailers ready to build deeper relationships, SuperSonic Advanced Loyalty adds segmentation, automation, and multi-store sync on top of the standard feature set."}
+            </p>
+          </div>
+
+          {/* Toggle tabs */}
+          <div
+            style={{
+              display: "inline-flex",
+              background: "var(--color-white)",
+              borderRadius: "var(--radius-full)",
+              padding: "4px",
+              border: "1px solid var(--color-border)",
+              flexShrink: 0,
+            }}
+          >
+            <button
+              onClick={() => setActiveTab("basic")}
+              style={{
+                padding: "10px 24px",
+                borderRadius: "var(--radius-full)",
+                border: "none",
+                fontSize: "var(--text-body-sm)",
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                background:
+                  activeTab === "basic"
+                    ? "var(--color-primary)"
+                    : "transparent",
+                color:
+                  activeTab === "basic"
+                    ? "var(--color-white)"
+                    : "var(--color-text-body)",
+              }}
+            >
+              SuperSonic Loyalty
+            </button>
+            <button
+              onClick={() => setActiveTab("advanced")}
+              style={{
+                padding: "10px 24px",
+                borderRadius: "var(--radius-full)",
+                border: "none",
+                fontSize: "var(--text-body-sm)",
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                background:
+                  activeTab === "advanced"
+                    ? "var(--color-primary)"
+                    : "transparent",
+                color:
+                  activeTab === "advanced"
+                    ? "var(--color-white)"
+                    : "var(--color-text-body)",
+              }}
+            >
+              SuperSonic Advanced Loyalty
+            </button>
+          </div>
+        </div>
+
+        {/* Italic subheading */}
         <p
           style={{
             fontSize: "var(--text-body)",
-            color: "var(--color-text-body)",
-            marginBottom: "var(--space-10)",
+            fontStyle: "italic",
+            fontWeight: 600,
+            color: "var(--color-text-heading)",
+            marginBottom: "var(--space-8)",
           }}
         >
           What it does for your store:
@@ -1137,7 +1274,7 @@ function LoyaltyFits() {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: "var(--space-6)",
-            marginBottom: "var(--space-10)",
+            marginBottom: "var(--space-12)",
           }}
         >
           {features.map((feat, i) => (
@@ -1145,11 +1282,10 @@ function LoyaltyFits() {
               key={`${activeTab}-${i}`}
               style={{
                 background: "var(--color-white)",
-                border: "1px solid var(--color-border)",
                 borderRadius: "var(--radius-lg)",
                 padding: "var(--space-8)",
                 textAlign: "left",
-                transition: "box-shadow 0.2s ease, transform 0.2s ease",
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <div
@@ -1158,18 +1294,18 @@ function LoyaltyFits() {
                   height: 48,
                   borderRadius: "var(--radius-sm)",
                   background: "var(--color-gray-50)",
+                  border: "1px solid var(--color-border)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "24px",
-                  marginBottom: "var(--space-4)",
+                  marginBottom: "var(--space-6)",
                 }}
               >
                 {feat.icon}
               </div>
               <h4
                 style={{
-                  fontSize: "var(--text-h4)",
+                  fontSize: "var(--text-body)",
                   fontWeight: 700,
                   color: "var(--color-text-heading)",
                   marginBottom: "var(--space-2)",
@@ -1195,6 +1331,7 @@ function LoyaltyFits() {
             fontSize: "var(--text-body)",
             color: "var(--color-text-body)",
             fontWeight: 600,
+            textAlign: "center",
           }}
         >
           {activeTab === "basic"
@@ -1208,23 +1345,56 @@ function LoyaltyFits() {
 
 /* ───── 5. EXPAND LOYALTY + FINAL CTA ───── */
 
+/* Add-on SVG icons */
+
+function IconGiftBox() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="11" width="18" height="10" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <rect x="5" y="7" width="14" height="4" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M12 7V21" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M7.5 7C7.5 7 8 4 10 4C12 4 12 7 12 7" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M16.5 7C16.5 7 16 4 14 4C12 4 12 7 12 7" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconMegaphone() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18 8C19.1 8 20 6.66 20 5C20 3.34 19.1 2 18 2" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M3 11V7C3 5.9 3.9 5 5 5H9L18 2V20L9 17H5C3.9 17 3 16.1 3 15V11Z" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M9 17V21C9 21.55 9.45 22 10 22H11C11.55 22 12 21.55 12 21V17" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
+function IconEnvelope() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" />
+      <path d="M22 7L13.03 12.7C12.71 12.9 12.36 13 12 13C11.64 13 11.29 12.9 10.97 12.7L2 7" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const addOnCards = [
   {
-    emoji: "🎁",
+    icon: <IconGiftBox />,
     title: "Branded Gift Cards",
     description:
       "Sell and reload branded gift cards in-store and online. Turn your happiest customers into your best marketers.",
     note: null,
   },
   {
-    emoji: "📣",
+    icon: <IconMegaphone />,
     title: "SMS Campaigns",
     description:
       "Send targeted text promotions, flash sales, and loyalty milestones straight to customers' phones.",
     note: "*Requires Advanced Rewards.",
   },
   {
-    emoji: "✉️",
+    icon: <IconEnvelope />,
     title: "SMS Receipts",
     description:
       "Replace paper receipts with branded SMS receipts that include loyalty balance, offers, and re-engagement links.",
@@ -1308,7 +1478,7 @@ function ExpandLoyalty() {
                 }}
               />
 
-              {/* Emoji illustration area */}
+              {/* Icon illustration area */}
               <div
                 style={{
                   display: "flex",
@@ -1326,10 +1496,9 @@ function ExpandLoyalty() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "40px",
                   }}
                 >
-                  {card.emoji}
+                  {card.icon}
                 </div>
               </div>
 

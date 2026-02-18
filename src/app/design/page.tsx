@@ -1492,6 +1492,76 @@ export default function DesignSystem() {
               ]}
             />
           </SubSection>
+
+          <SubSection title="Feature Card Icons (24×24 inline SVGs)">
+            <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "16px" }}>
+              Used in feature card grids (e.g. Loyalty Suite &ldquo;Loyalty that fits&rdquo; section). Each icon is an inline SVG component with 24×24 viewBox, <code>var(--color-gray-900)</code> stroke, 1.5 strokeWidth, no fill. Rendered inside a 48×48 container with <code>var(--color-gray-50)</code> background, <code>var(--radius-sm)</code> border-radius, and 1px <code>var(--color-border)</code> border.
+            </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "16px" }}>
+              {/* Visual preview of all feature card icons */}
+              {[
+                { label: "Phone", path: <><rect x="5" y="2" width="14" height="20" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><line x1="9" y1="18" x2="15" y2="18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /></> },
+                { label: "Customer ID", path: <><circle cx="12" cy="12" r="10" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><circle cx="12" cy="10" r="3" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><path d="M6.5 19.5C7.5 16.5 9.5 15 12 15C14.5 15 16.5 16.5 17.5 19.5" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" fill="none" /></> },
+                { label: "Trending Up", path: <><polyline points="23,6 13.5,15.5 8.5,10.5 1,18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" /><polyline points="17,6 23,6 23,12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" /></> },
+                { label: "Gift / Reward", path: <><rect x="3" y="8" width="18" height="13" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><path d="M12 8V21" stroke="var(--color-gray-900)" strokeWidth="1.5" /><path d="M3 12H21" stroke="var(--color-gray-900)" strokeWidth="1.5" /><path d="M7.5 8C7.5 8 7.5 4 10 4C12.5 4 12 8 12 8" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" fill="none" /><path d="M16.5 8C16.5 8 16.5 4 14 4C11.5 4 12 8 12 8" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" fill="none" /></> },
+                { label: "NFC Card", path: <><rect x="2" y="5" width="20" height="14" rx="2" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><path d="M9 12C9 10.34 10.34 9 12 9" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><path d="M7 12C7 9.24 9.24 7 12 7" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><circle cx="12" cy="12" r="1" fill="var(--color-gray-900)" /></> },
+                { label: "Settings", path: <><line x1="4" y1="6" x2="20" y2="6" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><line x1="4" y1="12" x2="20" y2="12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><line x1="4" y1="18" x2="20" y2="18" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><circle cx="8" cy="6" r="2" fill="white" stroke="var(--color-gray-900)" strokeWidth="1.5" /><circle cx="16" cy="12" r="2" fill="white" stroke="var(--color-gray-900)" strokeWidth="1.5" /><circle cx="10" cy="18" r="2" fill="white" stroke="var(--color-gray-900)" strokeWidth="1.5" /></> },
+                { label: "Target", path: <><circle cx="12" cy="12" r="10" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><circle cx="12" cy="12" r="6" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><circle cx="12" cy="12" r="2" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /></> },
+                { label: "Bar Chart", path: <><rect x="3" y="12" width="4" height="9" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><rect x="10" y="7" width="4" height="14" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><rect x="17" y="3" width="4" height="18" rx="1" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /></> },
+                { label: "Trophy", path: <><path d="M8 21H16" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /><path d="M12 17V21" stroke="var(--color-gray-900)" strokeWidth="1.5" /><path d="M7 4H17V8C17 11.31 14.76 14 12 14C9.24 14 7 11.31 7 8V4Z" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /></> },
+                { label: "Bell", path: <><path d="M18 8A6 6 0 1 0 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="var(--color-gray-900)" strokeWidth="1.5" fill="none" /><path d="M13.73 21A2 2 0 0 1 10.27 21" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" /></> },
+                { label: "Link", path: <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" fill="none" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" fill="none" /></> },
+                { label: "Pulse / A-B", path: <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="var(--color-gray-900)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" /> },
+              ].map((icon) => (
+                <div key={icon.label} style={{ textAlign: "center" }}>
+                  <div style={{ width: 48, height: 48, borderRadius: "var(--radius-sm)", background: "var(--color-gray-50)", border: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "4px" }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">{icon.path}</svg>
+                  </div>
+                  <span style={{ fontSize: "10px", color: "var(--color-gray-500)" }}>{icon.label}</span>
+                </div>
+              ))}
+            </div>
+            <TokenTable
+              items={[
+                { name: "ViewBox", value: "0 0 24 24" },
+                { name: "Stroke color", value: "var(--color-gray-900)" },
+                { name: "Stroke width", value: "1.5" },
+                { name: "Fill", value: "none (line icons only)" },
+                { name: "Container", value: "48×48px, var(--color-gray-50) bg, var(--radius-sm) radius, 1px var(--color-border)" },
+                { name: "Implementation", value: "Inline SVG function components (e.g. IconPhone, IconSettings)" },
+                { name: "Usage", value: "Feature card grids, add-on cards, section illustrations" },
+              ]}
+            />
+          </SubSection>
+
+          <SubSection title="Add-On Card Icons (32×32 inline SVGs)">
+            <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "12px" }}>
+              Larger icons used in add-on/product cards (e.g. Loyalty Suite &ldquo;Expand loyalty&rdquo; section). Same stroke style as Feature Card Icons but rendered at 32×32 inside an 80×80 circle container with <code>var(--color-gray-50)</code> background.
+            </p>
+            <TokenTable
+              items={[
+                { name: "ViewBox", value: "0 0 24 24 (scaled via width/height 32)" },
+                { name: "Stroke color", value: "var(--color-gray-900)" },
+                { name: "Stroke width", value: "1.5" },
+                { name: "Container", value: "80×80px circle, var(--color-gray-50) bg" },
+                { name: "Icons", value: "IconGiftBox, IconMegaphone, IconEnvelope" },
+              ]}
+            />
+          </SubSection>
+
+          <SubSection title="Floating Decoration Icons (20×20 in colored bubbles)">
+            <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "12px" }}>
+              Small decorative icons used in illustration sections (e.g. Loyalty Suite &ldquo;Effortless Checkout&rdquo; heart area). Each is a 20×20 SVG inside a 44×44 circle with a pastel background and subtle shadow.
+            </p>
+            <TokenTable
+              items={[
+                { name: "ViewBox", value: "0 0 24 24 (rendered at 20×20)" },
+                { name: "Stroke color", value: "Matches bubble theme (e.g. #f59e0b for gold, #3b82f6 for blue)" },
+                { name: "Container", value: "44×44px circle, pastel bg (e.g. #fef3c7, #dbeafe), shadow 0 4px 12px rgba(0,0,0,0.08)" },
+                { name: "Component", value: "FloatingIcon wrapper with bg and style props" },
+              ]}
+            />
+          </SubSection>
         </Section>
 
         {/* ===== 24. SECTION PATTERNS ===== */}
