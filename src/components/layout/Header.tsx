@@ -532,7 +532,7 @@ function SidebarNav({
 type GroupData = {
   icon: string;
   title: string;
-  items: { label: string }[];
+  items: { label: string; href?: string }[];
 };
 
 function PlatformPanel({
@@ -637,7 +637,7 @@ function ProductGroup({ group }: { group: GroupData }) {
           {group.items.map((item) => (
             <a
               key={item.label}
-              href="#"
+              href={item.href || "#"}
               style={{
                 fontSize: "16px",
                 fontWeight: 600,

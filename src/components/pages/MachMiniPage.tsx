@@ -2,6 +2,7 @@
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import GridPattern from "@/components/ui/GridPattern";
 import Image from "next/image";
 import { useState } from "react";
 import type { PageData } from "@/lib/pages";
@@ -88,17 +89,26 @@ function HeroSection() {
         }
       `}</style>
 
-      {/* Grid pattern overlay on hero background */}
+      {/* Grid pattern overlay on white hero — uses dark borders instead of white */}
       <div
-        className="grid-pattern"
-        style={{ opacity: 0.04 }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "grid",
+          gridTemplateColumns: "repeat(20, 1fr)",
+          gridTemplateRows: "repeat(15, 1fr)",
+          pointerEvents: "none",
+          maskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
+          WebkitMaskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
       >
         {Array.from({ length: 300 }).map((_, i) => (
           <div
             key={i}
             style={{
-              borderRight: "1px solid var(--color-gray-200)",
-              borderBottom: "1px solid var(--color-gray-200)",
+              borderRight: "1px solid rgba(16, 24, 40, 0.06)",
+              borderBottom: "1px solid rgba(16, 24, 40, 0.06)",
             }}
           />
         ))}
@@ -1900,10 +1910,26 @@ function FinalCta() {
             overflow: "hidden",
           }}
         >
-          {/* Grid pattern overlay */}
-          <div className="grid-pattern" style={{ opacity: 0.3 }}>
+          {/* Grid pattern overlay — evenly spread, subtle */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(20, 1fr)",
+              gridTemplateRows: "repeat(15, 1fr)",
+              pointerEvents: "none",
+            }}
+            aria-hidden="true"
+          >
             {Array.from({ length: 300 }).map((_, i) => (
-              <div key={i} className="grid-cell" />
+              <div
+                key={i}
+                style={{
+                  borderRight: "1px solid rgba(255, 255, 255, 0.08)",
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+                }}
+              />
             ))}
           </div>
 

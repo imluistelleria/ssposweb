@@ -31,7 +31,7 @@ export const sellAnywhereGroups = [
     title: "Mobile & Handheld",
     items: [
       { label: "Mobile POS (Mach Go)" },
-      { label: "Tablet POS (Mach Mini)" },
+      { label: "Tablet POS (Mach Mini)", href: "/platform/sell-anywhere/tablet-pos-mach-mini" },
       { label: "Tap-to-Pay / SoftPOS (BYOD)" },
     ],
   },
