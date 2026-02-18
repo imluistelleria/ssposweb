@@ -4,6 +4,7 @@ import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages"
 import WhitePage from "@/components/templates/WhitePage";
 import MachMiniPage from "@/components/pages/MachMiniPage";
 import Mach2Page from "@/components/pages/Mach2Page";
+import LoyaltySuitePage from "@/components/pages/LoyaltySuitePage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -62,6 +63,9 @@ export default async function PlatformPage({
   }
   if (fullSlug === "/platform/sell-anywhere/countertop-pos-mach-2") {
     return <Mach2Page data={page} />;
+  }
+  if (fullSlug === "/platform/grow-and-protect/loyalty-suite") {
+    return <LoyaltySuitePage data={page} />;
   }
 
   return <WhitePage data={page} />;

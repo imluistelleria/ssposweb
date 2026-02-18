@@ -128,7 +128,7 @@ export const growProtectGroups = [
     icon: "/images/menu/icon-operations.svg",
     title: "Loyalty & Marketing",
     items: [
-      { label: "Loyalty Suite (Points, Punch Cards & Rewards)" },
+      { label: "Loyalty Suite (Points, Punch Cards & Rewards)", href: "/platform/grow-and-protect/loyalty-suite" },
       { label: "Gift Cards & Digital Passes" },
       { label: "Scan Data & Vendor Programs" },
       { label: "Marketing Automation (SMS & Email)" },
