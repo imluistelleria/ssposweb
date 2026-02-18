@@ -20,7 +20,7 @@ export default function DesignSystem() {
             color: "white",
           }}
         >
-          Design System
+          Brand Guidelines
         </h1>
         <p
           style={{
@@ -30,7 +30,7 @@ export default function DesignSystem() {
             marginTop: "8px",
           }}
         >
-          SuperSonic POS — Complete design tokens, components, patterns &amp; conventions
+          SuperSonic POS — Brand identity, visual standards &amp; web design system
         </p>
         <p
           style={{
@@ -40,35 +40,64 @@ export default function DesignSystem() {
             marginTop: "4px",
           }}
         >
-          For humans and AI agents building pages for this site
+          For designers, marketers, partners, and AI agents
         </p>
       </div>
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "48px 80px" }}>
         {/* TABLE OF CONTENTS */}
         <Section title="Table of Contents">
+          <h3 style={{ fontSize: "16px", fontWeight: 900, color: "var(--color-gray-900)", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Brand Identity</h3>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 48px", marginBottom: "32px" }}>
+            {[
+              "1. Brand Overview",
+              "2. Logo Usage",
+              "3. Brand Voice & Messaging",
+              "4. Photography & Imagery",
+              "5. Social Media",
+              "6. Physical Products & Packaging",
+              "7. Event & Trade Shows",
+              "8. Billboards & Outdoor",
+              "9. Print Materials",
+            ].map((item) => (
+              <a
+                key={item}
+                href={`#${item.split(". ")[1]?.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`}
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  color: "var(--color-primary)",
+                  textDecoration: "none",
+                  padding: "4px 0",
+                }}
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+          <h3 style={{ fontSize: "16px", fontWeight: 900, color: "var(--color-gray-900)", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Web Design System</h3>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 48px" }}>
             {[
-              "1. Architecture & Conventions",
-              "2. Colors",
-              "3. Typography",
-              "4. Spacing",
-              "5. Layout",
-              "6. Border Radius",
-              "7. Shadows",
-              "8. Glass Effect",
-              "9. Buttons",
-              "10. Cards",
-              "11. Badge",
-              "12. Feature Tabs",
-              "13. Grid Pattern Overlay",
-              "14. Icon System",
-              "15. Section Patterns",
-              "16. Navigation & Dropdowns",
-              "17. Animation & Interaction",
-              "18. Data Architecture",
-              "19. File Structure",
-              "20. Utility Classes",
+              "10. Architecture & Conventions",
+              "11. Colors",
+              "12. Typography",
+              "13. Spacing",
+              "14. Layout",
+              "15. Border Radius",
+              "16. Shadows",
+              "17. Glass Effect",
+              "18. Buttons",
+              "19. Cards",
+              "20. Badge",
+              "21. Feature Tabs",
+              "22. Grid Pattern Overlay",
+              "23. Icon System",
+              "24. Section Patterns",
+              "25. Navigation & Dropdowns",
+              "26. Animation & Interaction",
+              "27. Data Architecture",
+              "28. File Structure",
+              "29. Utility Classes",
             ].map((item) => (
               <a
                 key={item}
@@ -87,8 +116,679 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 1. ARCHITECTURE & CONVENTIONS ===== */}
-        <Section title="1. Architecture & Conventions" id="architecture-conventions">
+        {/* ═══════════════════════════════════════════════════ */}
+        {/* ═══════════ BRAND IDENTITY (Sections 1–9) ═══════ */}
+        {/* ═══════════════════════════════════════════════════ */}
+
+        {/* ===== 1. BRAND OVERVIEW ===== */}
+        <Section title="1. Brand Overview" id="brand-overview">
+          <SubSection title="Mission Statement">
+            <div style={{ background: "var(--color-primary)", borderRadius: "16px", padding: "32px 40px", color: "white", fontSize: "20px", fontWeight: 700, lineHeight: "1.5", textAlign: "center" }}>
+              &ldquo;Empowering independent retailers with enterprise-grade technology.&rdquo;
+            </div>
+          </SubSection>
+
+          <SubSection title="Brand Values">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px" }}>
+              {[
+                { name: "Reliability", desc: "Built for 24/7 retail operations. Our systems never let merchants down." },
+                { name: "Speed", desc: "Faster checkout, faster onboarding, faster support — speed is in our DNA." },
+                { name: "Simplicity", desc: "Enterprise power without enterprise complexity. Intuitive for every user." },
+                { name: "Empowerment", desc: "Giving independent retailers the tools that were once only available to big chains." },
+              ].map((v) => (
+                <div key={v.name} style={{ background: "white", borderRadius: "16px", padding: "24px", border: "1px solid var(--color-gray-200)" }}>
+                  <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "var(--gradient-primary)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "12px" }}>
+                    <span style={{ color: "white", fontWeight: 900, fontSize: "18px" }}>{v.name[0]}</span>
+                  </div>
+                  <p style={{ fontSize: "16px", fontWeight: 700, color: "var(--color-gray-900)", marginBottom: "6px" }}>{v.name}</p>
+                  <p style={{ fontSize: "13px", color: "var(--color-gray-500)", lineHeight: "20px" }}>{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </SubSection>
+
+          <SubSection title="Brand Personality">
+            <TokenTable items={[
+              { name: "Confident", value: "We know our product is best-in-class — but we never talk down to others" },
+              { name: "Approachable", value: "Technical excellence communicated in clear, human language" },
+              { name: "Modern", value: "Cutting-edge technology, clean aesthetics, forward-looking" },
+              { name: "Technical but Human", value: "We respect the intelligence of our merchants while keeping things simple" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Taglines">
+            <div style={{ marginBottom: "16px" }}>
+              <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Primary Tagline</p>
+              <p style={{ fontSize: "24px", fontWeight: 900, color: "var(--color-gray-900)" }}>Shrink Shrinkage. Operate Anywhere. Drive Sales.</p>
+            </div>
+            <TokenTable items={[
+              { name: "C-Stores", value: "The All-in-One POS for Convenience Stores" },
+              { name: "Grocery", value: "Modern POS Built for Grocery" },
+              { name: "Liquor", value: "Smarter POS for Liquor Stores" },
+              { name: "Vape & Smoke", value: "POS Built for Vape & Smoke Shops" },
+              { name: "Petro / Fuel", value: "Fuel & Forecourt, Fully Integrated" },
+              { name: "Payments", value: "Fast, Secure, Integrated Payments" },
+            ]} />
+          </SubSection>
+        </Section>
+
+        {/* ===== 2. LOGO USAGE ===== */}
+        <Section title="2. Logo Usage" id="logo-usage">
+          <SubSection title="Logo Files">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px" }}>
+              {[
+                { file: "logo-dark.svg", bg: "#ffffff", border: true, label: "Dark on White (SVG)" },
+                { file: "logo-white.svg", bg: "var(--color-primary)", border: false, label: "White on Teal (SVG)" },
+                { file: "logo-dark.png", bg: "#ffffff", border: true, label: "Dark on White (PNG)" },
+                { file: "logo-white.png", bg: "var(--color-gray-900)", border: false, label: "White on Dark (PNG)" },
+              ].map((l) => (
+                <div key={l.file} style={{ textAlign: "center" }}>
+                  <div style={{ background: l.bg, borderRadius: "12px", padding: "32px 24px", display: "flex", alignItems: "center", justifyContent: "center", border: l.border ? "1px solid var(--color-gray-200)" : "none", minHeight: "100px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/images/logo/${l.file}`} alt={l.label} style={{ height: "46px", width: "auto" }} />
+                  </div>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-gray-500)", marginTop: "8px" }}>{l.label}</p>
+                  <code style={{ fontSize: "11px", color: "var(--color-gray-500)" }}>{l.file}</code>
+                </div>
+              ))}
+            </div>
+          </SubSection>
+
+          <SubSection title="Logo on Backgrounds">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
+              {[
+                { bg: "#ffffff", logo: "logo-dark.svg", label: "White background", border: true },
+                { bg: "var(--color-primary)", logo: "logo-white.svg", label: "Teal background", border: false },
+                { bg: "var(--color-gray-900)", logo: "logo-white.svg", label: "Dark background", border: false },
+                { bg: "linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)", logo: "logo-white.svg", label: "Gradient background", border: false },
+              ].map((item) => (
+                <div key={item.label} style={{ textAlign: "center" }}>
+                  <div style={{ background: item.bg, borderRadius: "12px", padding: "24px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80px", border: item.border ? "1px solid var(--color-gray-200)" : "none" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/images/logo/${item.logo}`} alt="" style={{ height: "40px", width: "auto" }} />
+                  </div>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-gray-500)", marginTop: "8px" }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </SubSection>
+
+          <SubSection title="Clear Space">
+            <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+              <div style={{ border: "2px dashed var(--color-primary)", borderRadius: "12px", padding: "32px 48px", position: "relative", background: "white" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo/logo-dark.svg" alt="Logo with clear space" style={{ height: "46px", width: "auto", display: "block" }} />
+                <SpecCallout label="1x height" />
+                <div style={{ position: "absolute", top: "8px", left: "50%", transform: "translateX(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
+                <div style={{ position: "absolute", bottom: "8px", left: "50%", transform: "translateX(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
+                <div style={{ position: "absolute", left: "8px", top: "50%", transform: "translateY(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
+                <div style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>1x</div>
+              </div>
+              <div style={{ fontSize: "14px", color: "var(--color-gray-500)", lineHeight: "22px" }}>
+                <p style={{ marginBottom: "8px" }}>Maintain a minimum clear space of <strong style={{ color: "var(--color-gray-900)" }}>1x the logo height</strong> on all sides.</p>
+                <p>No text, graphics, or other logos should appear within this zone.</p>
+              </div>
+            </div>
+          </SubSection>
+
+          <SubSection title="Minimum Sizes">
+            <TokenTable items={[
+              { name: "Digital (screen)", value: "40px height minimum" },
+              { name: "Print", value: '0.75" (19mm) height minimum' },
+              { name: "Favicon", value: "16×16px — use simplified mark only" },
+              { name: "Social avatar", value: "Logo mark on teal circle, minimum 32×32px" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Logo Misuse">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+              {[
+                { title: "Stretched or distorted", desc: "Never change the logo proportions" },
+                { title: "Wrong colors", desc: "Never use colors outside the brand palette" },
+                { title: "Too small", desc: "Never display below minimum size (40px digital)" },
+                { title: "On busy backgrounds", desc: "Never place on cluttered images without contrast" },
+                { title: "Rotated or skewed", desc: "Always keep the logo level and straight" },
+                { title: "Added effects", desc: "No drop shadows, glows, outlines, or 3D effects" },
+              ].map((m) => (
+                <DontExample key={m.title} title={m.title}>
+                  <p>{m.desc}</p>
+                </DontExample>
+              ))}
+            </div>
+          </SubSection>
+        </Section>
+
+        {/* ===== 3. BRAND VOICE & MESSAGING ===== */}
+        <Section title="3. Brand Voice & Messaging" id="brand-voice-messaging">
+          <SubSection title="Tone Attributes">
+            <TokenTable items={[
+              { name: "Confident", value: "Not arrogant — we lead with product strength, not competitor bashing" },
+              { name: "Technical", value: "Not jargon-heavy — explain complex features in accessible language" },
+              { name: "Empowering", value: "Not patronizing — respect the merchant's expertise and intelligence" },
+              { name: "Urgent", value: "Not pushy — create momentum through value, not pressure" },
+              { name: "Friendly", value: "Not casual — professional warmth, not slang or informality" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Word Choice">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <DoExample title="Use these words">
+                <p>Empower, streamline, enterprise-grade, intuitive, integrated, real-time, all-in-one, shrink shrinkage, drive sales, modern, fast, reliable, secure</p>
+              </DoExample>
+              <DontExample title="Avoid these words">
+                <p>Cheap, basic, simple (as a selling point), just, only, honestly, revolutionary, disruptive, game-changing, synergy, leverage (as verb)</p>
+              </DontExample>
+            </div>
+          </SubSection>
+
+          <SubSection title="Boilerplate Text">
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ background: "white", borderRadius: "12px", padding: "20px", border: "1px solid var(--color-gray-200)" }}>
+                <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Short (25 words)</p>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", lineHeight: "22px" }}>SuperSonic POS is an enterprise-grade point-of-sale platform built for independent retailers, offering integrated payments, inventory management, and real-time analytics.</p>
+              </div>
+              <div style={{ background: "white", borderRadius: "12px", padding: "20px", border: "1px solid var(--color-gray-200)" }}>
+                <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Medium (50 words)</p>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", lineHeight: "22px" }}>SuperSonic POS empowers convenience stores, grocery markets, liquor stores, and petro retailers with an all-in-one point-of-sale solution. From integrated payments and age verification to real-time inventory tracking and loss prevention, our platform helps independent retailers shrink shrinkage, operate anywhere, and drive sales.</p>
+              </div>
+              <div style={{ background: "white", borderRadius: "12px", padding: "20px", border: "1px solid var(--color-gray-200)" }}>
+                <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Long (100 words)</p>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", lineHeight: "22px" }}>SuperSonic POS is a comprehensive, cloud-based point-of-sale platform purpose-built for independent retailers. Serving convenience stores, grocery markets, liquor retailers, vape and smoke shops, and petro and fuel stations, SuperSonic delivers enterprise-grade tools at a price point that makes sense for independent operators. Our integrated ecosystem includes fast and secure payment processing, smart inventory management with real-time tracking, advanced loss prevention and shrink analytics, age verification and compliance tools, and multi-location management from a single dashboard. With SuperSonic POS, independent retailers get the technology they need to compete with national chains while keeping the personal touch their customers love.</p>
+              </div>
+            </div>
+          </SubSection>
+
+          <SubSection title="CTA Language Patterns">
+            <TokenTable items={[
+              { name: "Primary CTA", value: "Sign Up Free, Get Started Free, Start Your Free Trial" },
+              { name: "Secondary CTA", value: "Get a Demo, Speak to Sales, Talk to a Human" },
+              { name: "Learn more", value: "Learn More, See How It Works, Explore Features" },
+              { name: "Urgency CTA", value: "Start Saving Today, Switch to SuperSonic, Upgrade Your POS" },
+            ]} />
+          </SubSection>
+        </Section>
+
+        {/* ===== 4. PHOTOGRAPHY & IMAGERY ===== */}
+        <Section title="4. Photography & Imagery" id="photography-imagery">
+          <SubSection title="Style Attributes">
+            <TokenTable items={[
+              { name: "Lighting", value: "Bright, natural, well-lit — avoid harsh shadows or moody tones" },
+              { name: "Environments", value: "Clean, modern retail spaces — real stores, not generic stock" },
+              { name: "Subjects", value: "Real merchants, real employees, devices in actual use" },
+              { name: "Color tone", value: "Warm and inviting, natural skin tones, no heavy filters" },
+              { name: "Composition", value: "Clean and uncluttered, focus on the subject, ample negative space" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Color Treatment">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+              <MockupFrame label="Natural — no overlay" bg="white">
+                <div style={{ width: "100%", height: "120px", background: "linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", color: "var(--color-gray-500)" }}>Photo — natural colors</div>
+              </MockupFrame>
+              <MockupFrame label="Teal accent overlay" bg="white">
+                <div style={{ width: "100%", height: "120px", background: "linear-gradient(135deg, rgba(10,174,184,0.15) 0%, rgba(10,174,184,0.05) 100%)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", color: "var(--color-primary)" }}>Photo — teal tint 15%</div>
+              </MockupFrame>
+              <MockupFrame label="Gradient overlay (hero)" bg="white">
+                <div style={{ width: "100%", height: "120px", background: "linear-gradient(103.17deg, rgba(13,222,209,0.3) 5.2%, rgba(81,159,255,0.3) 95.19%)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", color: "var(--color-primary)" }}>Photo — gradient overlay</div>
+              </MockupFrame>
+            </div>
+          </SubSection>
+
+          <SubSection title="Photography Guidelines">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <DoExample title="Photography best practices">
+                <ul style={{ margin: 0, paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <li>Real retail environments and actual merchants</li>
+                  <li>Devices shown in active use (scanning, checkout)</li>
+                  <li>Diverse representation of store types</li>
+                  <li>Clean, well-organized store backgrounds</li>
+                </ul>
+              </DoExample>
+              <DontExample title="Photography mistakes">
+                <ul style={{ margin: 0, paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <li>Generic stock photos of smiling business people</li>
+                  <li>Overly staged or artificial poses</li>
+                  <li>Cluttered, messy, or dark environments</li>
+                  <li>Competitor devices or logos visible</li>
+                </ul>
+              </DontExample>
+            </div>
+          </SubSection>
+
+          <SubSection title="Product Photography">
+            <TokenTable items={[
+              { name: "Background", value: "White or neutral (#fafafa), seamless — no props or distractions" },
+              { name: "Lighting", value: "Even, studio-quality, consistent across all product shots" },
+              { name: "Angles", value: "Front, 3/4 view, side profile, with dock (if applicable)" },
+              { name: "Resolution", value: "Minimum 800px on longest edge, background-removed PNG" },
+              { name: "Shadow", value: "Soft drop shadow added via CSS: drop-shadow(0 20px 40px rgba(0,0,0,0.15))" },
+            ]} />
+          </SubSection>
+        </Section>
+
+        {/* ===== 5. SOCIAL MEDIA ===== */}
+        <Section title="5. Social Media" id="social-media">
+          <SubSection title="Platform Dimensions">
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
+              <thead>
+                <tr style={{ borderBottom: "2px solid var(--color-gray-200)" }}>
+                  <th style={{ textAlign: "left", padding: "8px 16px 8px 0", fontWeight: 700, color: "var(--color-gray-900)" }}>Platform</th>
+                  <th style={{ textAlign: "left", padding: "8px 16px 8px 0", fontWeight: 700, color: "var(--color-gray-900)" }}>Profile</th>
+                  <th style={{ textAlign: "left", padding: "8px 16px 8px 0", fontWeight: 700, color: "var(--color-gray-900)" }}>Cover / Banner</th>
+                  <th style={{ textAlign: "left", padding: "8px 16px 8px 0", fontWeight: 700, color: "var(--color-gray-900)" }}>Post</th>
+                  <th style={{ textAlign: "left", padding: "8px 0", fontWeight: 700, color: "var(--color-gray-900)" }}>Story / Reel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <PlatformSpec platform="X (Twitter)" profile="400×400" cover="1500×500" post="1200×675" />
+                <PlatformSpec platform="Facebook" profile="170×170" cover="820×312" post="1200×630" story="1080×1920" />
+                <PlatformSpec platform="Instagram" profile="320×320" cover="—" post="1080×1080" story="1080×1920" />
+                <PlatformSpec platform="LinkedIn" profile="400×400" cover="1128×191" post="1200×627" />
+                <PlatformSpec platform="YouTube" profile="800×800" cover="2560×1440" post="1280×720" />
+              </tbody>
+            </table>
+          </SubSection>
+
+          <SubSection title="Profile Picture">
+            <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
+              <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo/logo-white.svg" alt="Profile picture" style={{ height: "50px", width: "auto" }} />
+              </div>
+              <div>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", fontWeight: 700, marginBottom: "4px" }}>Logo mark on teal circle</p>
+                <p style={{ fontSize: "13px", color: "var(--color-gray-500)", lineHeight: "20px" }}>Use the white logo centered on a solid teal (#0aaeb8) circle. Ensure the logo has adequate padding (20% margin on all sides). Use the same image across all platforms for brand consistency.</p>
+              </div>
+            </div>
+          </SubSection>
+
+          <SubSection title="Cover Photo Template">
+            <MockupFrame label="Cover photo — teal gradient with tagline" height="160px" bg="linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)">
+              <div style={{ textAlign: "center", color: "white" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo/logo-white.svg" alt="" style={{ height: "36px", width: "auto", marginBottom: "12px" }} />
+                <p style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "-0.3px" }}>Shrink Shrinkage. Operate Anywhere. Drive Sales.</p>
+              </div>
+            </MockupFrame>
+          </SubSection>
+
+          <SubSection title="Post Templates">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+              <MockupFrame label="Product Feature Post" height="280px" bg="white">
+                <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
+                  <div style={{ flex: 1, background: "var(--color-primary)", borderRadius: "8px 8px 0 0", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px" }}>
+                    <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: "12px", padding: "16px 24px", color: "white", fontWeight: 700, fontSize: "14px" }}>Product Screenshot</div>
+                  </div>
+                  <div style={{ padding: "16px", background: "white", borderRadius: "0 0 8px 8px" }}>
+                    <p style={{ fontSize: "14px", fontWeight: 700, color: "var(--color-gray-900)", marginBottom: "4px" }}>Feature Headline</p>
+                    <p style={{ fontSize: "11px", color: "var(--color-gray-500)" }}>Brief description of the feature and its benefit to retailers.</p>
+                  </div>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="Customer Testimonial" height="280px" bg="var(--color-primary)">
+                <div style={{ padding: "24px", color: "white", textAlign: "center" }}>
+                  <p style={{ fontSize: "28px", fontWeight: 300, opacity: 0.5, marginBottom: "8px" }}>&ldquo;</p>
+                  <p style={{ fontSize: "13px", fontWeight: 500, lineHeight: "20px", marginBottom: "16px" }}>Quote from a real merchant about their experience with SuperSonic POS.</p>
+                  <p style={{ fontSize: "11px", opacity: 0.7 }}>— Merchant Name, Store Name</p>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="Announcement Post" height="280px" bg="var(--color-gray-900)">
+                <div style={{ padding: "24px", color: "white", textAlign: "center" }}>
+                  <div style={{ display: "inline-block", background: "var(--color-primary)", borderRadius: "20px", padding: "4px 12px", fontSize: "10px", fontWeight: 700, marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.5px" }}>New</div>
+                  <p style={{ fontSize: "18px", fontWeight: 900, marginBottom: "8px" }}>Announcement Headline</p>
+                  <p style={{ fontSize: "12px", opacity: 0.7, lineHeight: "18px" }}>Supporting text that explains the news and why it matters.</p>
+                </div>
+              </MockupFrame>
+            </div>
+          </SubSection>
+
+          <SubSection title="Content Pillars">
+            <TokenTable items={[
+              { name: "Product", value: "Feature highlights, product updates, how-to tips, demo clips (40%)" },
+              { name: "Industry Tips", value: "Retail best practices, loss prevention tips, seasonal advice (25%)" },
+              { name: "Customer Stories", value: "Merchant spotlights, testimonials, case studies (20%)" },
+              { name: "Company Culture", value: "Team highlights, events, behind-the-scenes, milestones (15%)" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Hashtag Strategy">
+            <TokenTable items={[
+              { name: "Brand", value: "#SuperSonicPOS #ShrinkShrinkage #OperateAnywhere" },
+              { name: "Industry", value: "#RetailTech #POSSystem #ConvenienceStore #IndependentRetail" },
+              { name: "Engagement", value: "#SmallBusiness #RetailTips #StoreOwner #MerchantLife" },
+              { name: "Usage", value: "3–5 hashtags per post. Brand tag on every post. Mix industry + engagement." },
+            ]} />
+          </SubSection>
+        </Section>
+
+        {/* ===== 6. PHYSICAL PRODUCTS & PACKAGING ===== */}
+        <Section title="6. Physical Products & Packaging" id="physical-products-packaging">
+          <SubSection title="Device Branding Zones">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+              <MockupFrame label="POS Terminal — Front face" height="240px">
+                <div style={{ width: "140px", height: "200px", background: "var(--color-gray-900)", borderRadius: "12px", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", padding: "12px" }}>
+                  <div style={{ width: "110px", height: "90px", background: "#2a2d52", borderRadius: "6px", marginBottom: "8px" }} />
+                  <div style={{ position: "absolute", bottom: "12px", left: "50%", transform: "translateX(-50%)" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "16px", width: "auto" }} />
+                  </div>
+                  <div style={{ position: "absolute", top: "115px", right: "-60px", fontSize: "10px", color: "var(--color-primary)", fontWeight: 700 }}>
+                    <SpecCallout label="Logo zone" />
+                  </div>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="POS Terminal — Side / Back" height="240px">
+                <div style={{ width: "60px", height: "200px", background: "var(--color-gray-900)", borderRadius: "8px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ transform: "rotate(-90deg)", whiteSpace: "nowrap" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
+                  </div>
+                </div>
+              </MockupFrame>
+            </div>
+          </SubSection>
+
+          <SubSection title="Box Design Specification">
+            <div style={{ display: "flex", gap: "24px", alignItems: "start" }}>
+              <MockupFrame label="Product box — front panel" width="200px" height="260px" bg="var(--color-primary)">
+                <div style={{ color: "white", textAlign: "center", padding: "16px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo/logo-white.svg" alt="" style={{ height: "28px", width: "auto", marginBottom: "20px" }} />
+                  <div style={{ width: "80px", height: "100px", background: "rgba(255,255,255,0.15)", borderRadius: "8px", margin: "0 auto 16px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", opacity: 0.7 }}>Product Photo</div>
+                  <p style={{ fontSize: "14px", fontWeight: 900 }}>VP550</p>
+                  <p style={{ fontSize: "10px", opacity: 0.7 }}>Smart POS Terminal</p>
+                </div>
+              </MockupFrame>
+              <TokenTable items={[
+                { name: "Box color", value: "Teal (#0aaeb8) — matte finish" },
+                { name: "Logo", value: "White, centered top, 20% margin from top edge" },
+                { name: "Product photo", value: "Centered, background-removed, 50% of front area" },
+                { name: "Model name", value: "White, 16px equivalent, bold, below photo" },
+                { name: "Subtitle", value: "White, 10px equivalent, light weight" },
+                { name: "Back panel", value: "White background, dark logo, specs table, regulatory marks" },
+                { name: "Side panels", value: "Teal, white logo rotated 90°, model name" },
+              ]} />
+            </div>
+          </SubSection>
+
+          <SubSection title="Unboxing Experience">
+            <TokenTable items={[
+              { name: "Insert card", value: 'Welcome card — teal front with "Welcome to SuperSonic" + white logo, back with QR code to setup guide' },
+              { name: "Quick-start guide", value: "Tri-fold, white stock, teal headings, step-by-step with device illustrations" },
+              { name: "Branded sticker", value: "Die-cut logo, teal on white circle, 2\" diameter" },
+              { name: "Cable/accessory bags", value: "Clear bags with small teal SuperSonic label" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Print Color Reference">
+            <TokenTable items={[
+              { name: "Teal (primary)", value: "Pantone 7711 C | CMYK: 75 0 25 0 | Hex: #0aaeb8" },
+              { name: "Dark (headings)", value: "Pantone 7547 C | CMYK: 0 0 0 95 | Hex: #101828" },
+              { name: "Gray (body text)", value: "Pantone 7545 C | CMYK: 0 0 0 60 | Hex: #667085" },
+              { name: "White", value: "Uncoated white stock, no ink" },
+              { name: "Gradient", value: "For print: use solid teal or request gradient swatch from brand team" },
+            ]} />
+          </SubSection>
+        </Section>
+
+        {/* ===== 7. EVENT & TRADE SHOWS ===== */}
+        <Section title="7. Event & Trade Shows" id="event-trade-shows">
+          <SubSection title="Booth Layout">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+              <MockupFrame label="10×10 Booth" height="220px">
+                <div style={{ width: "180px", height: "180px", border: "2px solid var(--color-gray-300)", borderRadius: "4px", position: "relative", display: "grid", gridTemplateRows: "1fr auto", padding: "8px" }}>
+                  <div style={{ background: "var(--color-primary)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "8px" }}>
+                    <span style={{ color: "white", fontSize: "10px", fontWeight: 700 }}>Backdrop 10&apos;</span>
+                  </div>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                    <div style={{ background: "var(--color-gray-100)", borderRadius: "3px", padding: "4px", textAlign: "center", fontSize: "8px", color: "var(--color-gray-500)" }}>Demo Station</div>
+                    <div style={{ background: "var(--color-gray-100)", borderRadius: "3px", padding: "4px", textAlign: "center", fontSize: "8px", color: "var(--color-gray-500)" }}>Table</div>
+                  </div>
+                  <div style={{ position: "absolute", bottom: "-20px", left: "50%", transform: "translateX(-50)", fontSize: "10px", color: "var(--color-gray-500)" }}>10 ft</div>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="10×20 Booth" height="220px">
+                <div style={{ width: "180px", height: "100px", border: "2px solid var(--color-gray-300)", borderRadius: "4px", position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "8px", gap: "6px" }}>
+                  <div style={{ background: "var(--color-primary)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", gridColumn: "1 / -1" }}>
+                    <span style={{ color: "white", fontSize: "9px", fontWeight: 700 }}>Backdrop 20&apos;</span>
+                  </div>
+                  <div style={{ background: "var(--color-gray-100)", borderRadius: "3px", padding: "3px", textAlign: "center", fontSize: "7px", color: "var(--color-gray-500)" }}>Demo 1</div>
+                  <div style={{ background: "var(--color-gray-100)", borderRadius: "3px", padding: "3px", textAlign: "center", fontSize: "7px", color: "var(--color-gray-500)" }}>Lounge</div>
+                  <div style={{ background: "var(--color-gray-100)", borderRadius: "3px", padding: "3px", textAlign: "center", fontSize: "7px", color: "var(--color-gray-500)" }}>Demo 2</div>
+                </div>
+              </MockupFrame>
+            </div>
+          </SubSection>
+
+          <SubSection title="Backdrop & Banners">
+            <TokenTable items={[
+              { name: "Backdrop", value: "Teal background with gradient overlay. Logo centered, white, large. Tagline below logo." },
+              { name: "Retractable banner", value: '33"×80" — teal bg, white logo top, product photo center, tagline + URL bottom' },
+              { name: "Table-top banner", value: '6 ft wide — same design language as retractable, horizontal layout' },
+              { name: "Typography", value: "All text in Lato. Headlines weight 900, body weight 400." },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Booth Materials">
+            <TokenTable items={[
+              { name: "Tablecloth", value: "6 ft fitted, teal fabric, white logo centered on front panel" },
+              { name: "Screen displays", value: "Demo loop — product walkthrough video, 16:9, branded lower third with logo" },
+              { name: "Badge / lanyard", value: "Teal lanyard with white SuperSonic text, badge holder clear" },
+              { name: "Literature rack", value: "Sell sheets, business cards, branded USB drives with demo content" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Swag Guidelines">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <DoExample title="Approved swag items">
+                <ul style={{ margin: 0, paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <li>T-shirts: Teal shirt, white logo on chest, tagline on back</li>
+                  <li>Pens: White body, teal logo, teal clip</li>
+                  <li>Stickers: Die-cut logo, 2&quot; diameter</li>
+                  <li>Tote bags: White bag, teal logo centered</li>
+                </ul>
+              </DoExample>
+              <DontExample title="Swag to avoid">
+                <ul style={{ margin: 0, paddingLeft: "16px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <li>Cheap or low-quality items that reflect poorly on brand</li>
+                  <li>Items with competitor colors or confusing branding</li>
+                  <li>Overloaded designs with too much text or multiple logos</li>
+                  <li>Generic items without any brand customization</li>
+                </ul>
+              </DontExample>
+            </div>
+          </SubSection>
+        </Section>
+
+        {/* ===== 8. BILLBOARDS & OUTDOOR ===== */}
+        <Section title="8. Billboards & Outdoor" id="billboards-outdoor">
+          <SubSection title="Format Specifications">
+            <TokenTable items={[
+              { name: "Billboard", value: "14\'×48\' (168\"×576\") — standard bulletins, highway visible" },
+              { name: "Junior Poster", value: "6\'×12\' (72\"×144\") — urban streets, eye-level" },
+              { name: "Bus Shelter", value: "46\"×67\" — transit stops, pedestrian areas" },
+              { name: "Digital Billboard", value: "1400×400px (varies) — 8-second rotation" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Layout Rules">
+            <div style={{ display: "flex", gap: "24px", alignItems: "start" }}>
+              <MockupFrame label="Billboard layout template" width="480px" height="160px" bg="var(--color-primary)">
+                <div style={{ width: "100%", height: "100%", display: "grid", gridTemplateColumns: "2fr 1fr", padding: "20px", alignItems: "center" }}>
+                  <div>
+                    <p style={{ fontSize: "20px", fontWeight: 900, color: "white", lineHeight: "1.2", marginBottom: "8px" }}>Max 7 Words Here</p>
+                    <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)" }}>supersonic-pos.com</p>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "24px", width: "auto" }} />
+                  </div>
+                </div>
+              </MockupFrame>
+              <TokenTable items={[
+                { name: "Max words", value: "7 words (5 ideal) — must be readable at 60mph" },
+                { name: "Logo position", value: "Always bottom-right or right-center" },
+                { name: "URL", value: "Below logo, small, optional" },
+                { name: "CTA", value: "One action only — phone or URL, never both" },
+              ]} />
+            </div>
+          </SubSection>
+
+          <SubSection title="Readability Requirements">
+            <TokenTable items={[
+              { name: "Headline font size", value: "Minimum 18\" letter height for highway billboards" },
+              { name: "Contrast", value: "Minimum 4.5:1 ratio — white on teal passes at 4.6:1" },
+              { name: "Approved combos", value: "White text on teal bg | Dark text on white bg | White text on dark bg" },
+              { name: "Avoid", value: "No thin fonts, no ALL lowercase, no more than 2 font sizes" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Template Options">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+              <MockupFrame label="Hero image + CTA" height="100px" bg="white">
+                <div style={{ width: "100%", height: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", overflow: "hidden", borderRadius: "6px" }}>
+                  <div style={{ background: "var(--color-gray-100)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "9px", color: "var(--color-gray-400)" }}>Photo</div>
+                  <div style={{ background: "var(--color-primary)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "8px" }}>
+                    <p style={{ color: "white", fontSize: "10px", fontWeight: 900 }}>Headline</p>
+                    <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "7px" }}>URL</p>
+                  </div>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="Bold text + gradient" height="100px" bg="linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)">
+                <div style={{ textAlign: "center", color: "white" }}>
+                  <p style={{ fontSize: "12px", fontWeight: 900, marginBottom: "4px" }}>Bold Statement</p>
+                  <p style={{ fontSize: "7px", opacity: 0.7 }}>supersonic-pos.com</p>
+                </div>
+              </MockupFrame>
+              <MockupFrame label="Product focus" height="100px" bg="white">
+                <div style={{ width: "100%", height: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", overflow: "hidden", borderRadius: "6px" }}>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", padding: "8px" }}>
+                    <p style={{ fontSize: "9px", fontWeight: 900, color: "var(--color-gray-900)", marginBottom: "2px" }}>Product Name</p>
+                    <p style={{ fontSize: "7px", color: "var(--color-gray-500)" }}>Tagline here</p>
+                  </div>
+                  <div style={{ background: "var(--color-gray-50)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "9px", color: "var(--color-gray-400)" }}>Device</div>
+                </div>
+              </MockupFrame>
+            </div>
+          </SubSection>
+        </Section>
+
+        {/* ===== 9. PRINT MATERIALS ===== */}
+        <Section title="9. Print Materials" id="print-materials">
+          <SubSection title="Business Cards">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+              <MockupFrame label='Front — 3.5"×2"' height="180px">
+                <div style={{ width: "240px", height: "140px", background: "white", borderRadius: "8px", border: "1px solid var(--color-gray-200)", padding: "20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-dark.svg" alt="" style={{ height: "20px", width: "auto", marginBottom: "12px" }} />
+                    <p style={{ fontSize: "13px", fontWeight: 900, color: "var(--color-gray-900)" }}>John Smith</p>
+                    <p style={{ fontSize: "10px", color: "var(--color-gray-500)" }}>Regional Sales Manager</p>
+                  </div>
+                  <div style={{ fontSize: "9px", color: "var(--color-gray-500)", lineHeight: "14px" }}>
+                    <p>john@supersonic-pos.com</p>
+                    <p>(555) 123-4567</p>
+                  </div>
+                </div>
+              </MockupFrame>
+              <MockupFrame label='Back — 3.5"×2"' height="180px">
+                <div style={{ width: "240px", height: "140px", background: "var(--color-primary)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "8px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo/logo-white.svg" alt="" style={{ height: "28px", width: "auto" }} />
+                  <p style={{ fontSize: "8px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.5px" }}>supersonic-pos.com</p>
+                </div>
+              </MockupFrame>
+            </div>
+            <div style={{ marginTop: "16px" }}>
+              <TokenTable items={[
+                { name: "Size", value: '3.5"×2" (standard US business card)' },
+                { name: "Stock", value: "16pt matte or soft-touch laminate" },
+                { name: "Front", value: "White bg, dark logo top-left, name + title, contact info bottom-left" },
+                { name: "Back", value: "Solid teal, white logo centered, URL below" },
+                { name: "Font", value: "Lato — name 10pt bold, title 8pt regular, contact 7pt regular" },
+              ]} />
+            </div>
+          </SubSection>
+
+          <SubSection title="Letterhead">
+            <div style={{ display: "flex", gap: "24px", alignItems: "start" }}>
+              <MockupFrame label='Letterhead — 8.5"×11"' width="200px" height="280px">
+                <div style={{ width: "170px", height: "240px", background: "white", borderRadius: "4px", border: "1px solid var(--color-gray-200)", padding: "16px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-dark.svg" alt="" style={{ height: "16px", width: "auto", marginBottom: "24px" }} />
+                    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div key={i} style={{ height: "3px", background: "var(--color-gray-100)", borderRadius: "2px", width: i === 5 ? "60%" : "100%" }} />
+                      ))}
+                    </div>
+                  </div>
+                  <div style={{ borderTop: "1px solid var(--color-gray-200)", paddingTop: "8px", fontSize: "6px", color: "var(--color-gray-400)", lineHeight: "10px" }}>
+                    <p>SuperSonic POS, Inc.</p>
+                    <p>123 Main St, Suite 100</p>
+                    <p>supersonic-pos.com</p>
+                  </div>
+                </div>
+              </MockupFrame>
+              <TokenTable items={[
+                { name: "Logo", value: "Top-left corner, dark variant, 1\" from edges" },
+                { name: "Body area", value: 'Starts 2.5" from top, 1" margins all sides' },
+                { name: "Footer", value: "Company address, phone, URL — centered, 7pt, gray-500" },
+                { name: "Stock", value: "24lb premium white, uncoated" },
+                { name: "Accent", value: "Optional 2px teal line under logo or at page bottom" },
+              ]} />
+            </div>
+          </SubSection>
+
+          <SubSection title="Brochure (Tri-fold)">
+            <TokenTable items={[
+              { name: "Flat size", value: '11"×8.5" (landscape)' },
+              { name: "Panel sizes", value: '3.67"×8.5" per panel (3 panels)' },
+              { name: "Cover panel", value: "Teal bg, white logo large, tagline below, product photo" },
+              { name: "Inside panels", value: "White bg, feature sections with teal headings, checkmark lists" },
+              { name: "Back panel", value: "Contact info, QR code to demo, social handles" },
+              { name: "Stock", value: "100lb gloss text, full bleed" },
+            ]} />
+          </SubSection>
+
+          <SubSection title="Sell Sheet (One-Pager)">
+            <div style={{ display: "flex", gap: "24px", alignItems: "start" }}>
+              <MockupFrame label='Sell sheet — 8.5"×11"' width="200px" height="280px">
+                <div style={{ width: "170px", height: "240px", background: "white", borderRadius: "4px", border: "1px solid var(--color-gray-200)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+                  <div style={{ background: "var(--color-primary)", padding: "12px", display: "flex", alignItems: "center", gap: "8px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/logo/logo-white.svg" alt="" style={{ height: "12px", width: "auto" }} />
+                    <span style={{ color: "white", fontSize: "8px", fontWeight: 900 }}>Product Name</span>
+                  </div>
+                  <div style={{ flex: 1, padding: "10px", display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <div style={{ height: "40px", background: "var(--color-gray-50)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "7px", color: "var(--color-gray-400)" }}>Hero Image</div>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i} style={{ height: "24px", background: "var(--color-gray-50)", borderRadius: "3px" }} />
+                      ))}
+                    </div>
+                    <div style={{ marginTop: "auto", background: "var(--color-primary)", borderRadius: "10px", padding: "4px", textAlign: "center", fontSize: "7px", color: "white", fontWeight: 700 }}>Get a Demo</div>
+                  </div>
+                </div>
+              </MockupFrame>
+              <TokenTable items={[
+                { name: "Header", value: "Teal bar with white logo + product name" },
+                { name: "Hero area", value: "Product photo or key visual, top 30%" },
+                { name: "Features", value: "2-column grid, teal checkmarks, 4–6 features" },
+                { name: "CTA", value: "Teal pill button at bottom: Get a Demo / Sign Up Free" },
+                { name: "Footer", value: "Contact info, URL, QR code" },
+                { name: "Stock", value: "80lb gloss cover, single-sided or double-sided" },
+              ]} />
+            </div>
+          </SubSection>
+        </Section>
+
+        {/* ═══════════════════════════════════════════════════ */}
+        {/* ═══════════ WEB DESIGN SYSTEM (Sections 10–29) ═══ */}
+        {/* ═══════════════════════════════════════════════════ */}
+
+        {/* ===== 10. ARCHITECTURE & CONVENTIONS ===== */}
+        <Section title="10. Architecture & Conventions" id="architecture-conventions">
           <SubSection title="Tech Stack">
             <TokenTable
               items={[
@@ -137,8 +837,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 2. COLORS ===== */}
-        <Section title="2. Colors" id="colors">
+        {/* ===== 11. COLORS ===== */}
+        <Section title="11. Colors" id="colors">
           <SubSection title="Brand Colors">
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <ColorSwatch name="Primary (Teal)" value="#0aaeb8" variable="--color-primary" />
@@ -196,8 +896,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 3. TYPOGRAPHY ===== */}
-        <Section title="3. Typography" id="typography">
+        {/* ===== 12. TYPOGRAPHY ===== */}
+        <Section title="12. Typography" id="typography">
           <SubSection title="Font Family">
             <p style={{ fontSize: "16px", color: "var(--color-gray-500)", marginBottom: "16px" }}>
               <strong style={{ color: "var(--color-gray-900)" }}>Lato</strong> — Weights: 300 (Light), 400 (Regular), 700 (Bold), 900 (Black)
@@ -262,8 +962,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 4. SPACING ===== */}
-        <Section title="4. Spacing" id="spacing">
+        {/* ===== 13. SPACING ===== */}
+        <Section title="13. Spacing" id="spacing">
           <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "24px" }}>
             8-point base unit system. Use these tokens for consistent padding, margins, and gaps.
           </p>
@@ -306,8 +1006,8 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 5. LAYOUT ===== */}
-        <Section title="5. Layout" id="layout">
+        {/* ===== 14. LAYOUT ===== */}
+        <Section title="14. Layout" id="layout">
           <SubSection title="Page Constraints">
             <TokenTable
               items={[
@@ -345,8 +1045,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 6. BORDER RADIUS ===== */}
-        <Section title="6. Border Radius" id="border-radius">
+        {/* ===== 15. BORDER RADIUS ===== */}
+        <Section title="15. Border Radius" id="border-radius">
           <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", alignItems: "end" }}>
             {[
               { name: "Small", value: "8px", variable: "--radius-sm", usage: "Sidebar buttons, tags" },
@@ -376,8 +1076,8 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 7. SHADOWS ===== */}
-        <Section title="7. Shadows" id="shadows">
+        {/* ===== 16. SHADOWS ===== */}
+        <Section title="16. Shadows" id="shadows">
           <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
             {[
               {
@@ -432,8 +1132,8 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 8. GLASS EFFECT ===== */}
-        <Section title="8. Glass Effect" id="glass-effect">
+        {/* ===== 17. GLASS EFFECT ===== */}
+        <Section title="17. Glass Effect" id="glass-effect">
           <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
             <div
               style={{
@@ -474,8 +1174,8 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 9. BUTTONS ===== */}
-        <Section title="9. Buttons" id="buttons">
+        {/* ===== 18. BUTTONS ===== */}
+        <Section title="18. Buttons" id="buttons">
           <SubSection title=".btn-primary — Primary Pill (with icon circle)">
             <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
               <button className="btn-primary" style={{ textDecoration: "none" }}>
@@ -594,8 +1294,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 10. CARDS ===== */}
-        <Section title="10. Cards" id="cards">
+        {/* ===== 19. CARDS ===== */}
+        <Section title="19. Cards" id="cards">
           <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
             <div className="card" style={{ width: "300px" }}>
               <h4 style={{ fontSize: "var(--text-h4)", marginBottom: "8px" }}>Base Card</h4>
@@ -643,8 +1343,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 11. BADGE ===== */}
-        <Section title="11. Badge" id="badge">
+        {/* ===== 20. BADGE ===== */}
+        <Section title="20. Badge" id="badge">
           <div style={{ display: "flex", gap: "16px", alignItems: "center", marginBottom: "16px" }}>
             <span className="badge">New</span>
             <span className="badge">Beta</span>
@@ -664,8 +1364,8 @@ export default function DesignSystem() {
           </p>
         </Section>
 
-        {/* ===== 12. FEATURE TABS ===== */}
-        <Section title="12. Feature Tabs" id="feature-tabs">
+        {/* ===== 21. FEATURE TABS ===== */}
+        <Section title="21. Feature Tabs" id="feature-tabs">
           <div style={{ display: "flex", gap: "32px", alignItems: "start" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "0", width: "300px" }}>
               <div className="feature-tab active">
@@ -688,8 +1388,8 @@ export default function DesignSystem() {
           </div>
         </Section>
 
-        {/* ===== 13. GRID PATTERN ===== */}
-        <Section title="13. Grid Pattern Overlay" id="grid-pattern-overlay">
+        {/* ===== 22. GRID PATTERN ===== */}
+        <Section title="22. Grid Pattern Overlay" id="grid-pattern-overlay">
           <div
             style={{
               position: "relative",
@@ -732,8 +1432,8 @@ export default function DesignSystem() {
           />
         </Section>
 
-        {/* ===== 14. ICON SYSTEM ===== */}
-        <Section title="14. Icon System" id="icon-system">
+        {/* ===== 23. ICON SYSTEM ===== */}
+        <Section title="23. Icon System" id="icon-system">
           <SubSection title="Gradient Circle Icons (40×40)">
             <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "16px" }}>
               Used in dropdown menus for industries, payments, partners, about. Each is a 40×40 SVG with gradient circle background and white stroke icons.
@@ -794,8 +1494,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 15. SECTION PATTERNS ===== */}
-        <Section title="15. Section Patterns" id="section-patterns">
+        {/* ===== 24. SECTION PATTERNS ===== */}
+        <Section title="24. Section Patterns" id="section-patterns">
           <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "24px" }}>
             Pages are built from composable section patterns. Each section is a function component.
           </p>
@@ -872,8 +1572,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 16. NAVIGATION & DROPDOWNS ===== */}
-        <Section title="16. Navigation & Dropdowns" id="navigation-dropdowns">
+        {/* ===== 25. NAVIGATION & DROPDOWNS ===== */}
+        <Section title="25. Navigation & Dropdowns" id="navigation-dropdowns">
           <SubSection title="Header">
             <TokenTable
               items={[
@@ -931,8 +1631,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 17. ANIMATION & INTERACTION ===== */}
-        <Section title="17. Animation & Interaction" id="animation-interaction">
+        {/* ===== 26. ANIMATION & INTERACTION ===== */}
+        <Section title="26. Animation & Interaction" id="animation-interaction">
           <SubSection title="CSS Keyframe Animations (Hero)">
             <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "12px" }}>
               Defined in a &lt;style&gt; tag inside the PetroHero component. All loop on 5–5.5s infinite cycles.
@@ -975,8 +1675,8 @@ export default function DesignSystem() {
           </SubSection>
         </Section>
 
-        {/* ===== 18. DATA ARCHITECTURE ===== */}
-        <Section title="18. Data Architecture" id="data-architecture">
+        {/* ===== 27. DATA ARCHITECTURE ===== */}
+        <Section title="27. Data Architecture" id="data-architecture">
           <SubSection title="/src/lib/data.ts — Central Data Store">
             <p style={{ fontSize: "14px", color: "var(--color-gray-500)", marginBottom: "12px" }}>
               All static content lives in this file. Import and map over arrays to render UI.
@@ -1027,8 +1727,8 @@ type IndustryGroup = { label: string; items: { icon: string; label: string }[] }
           </SubSection>
         </Section>
 
-        {/* ===== 19. FILE STRUCTURE ===== */}
-        <Section title="19. File Structure" id="file-structure">
+        {/* ===== 28. FILE STRUCTURE ===== */}
+        <Section title="28. File Structure" id="file-structure">
           <CodeExample
             title="Project Structure"
             code={`ssposweb/
@@ -1066,8 +1766,8 @@ type IndustryGroup = { label: string; items: { icon: string; label: string }[] }
           />
         </Section>
 
-        {/* ===== 20. UTILITY CLASSES ===== */}
-        <Section title="20. Utility Classes" id="utility-classes">
+        {/* ===== 29. UTILITY CLASSES ===== */}
+        <Section title="29. Utility Classes" id="utility-classes">
           <TokenTable
             items={[
               { name: ".container-main", value: "max-width: 1280px, centered, 80px horizontal padding" },
@@ -1079,8 +1779,8 @@ type IndustryGroup = { label: string; items: { icon: string; label: string }[] }
           />
         </Section>
 
-        {/* ===== AI AGENT QUICK REFERENCE ===== */}
-        <Section title="Quick Reference for AI Agents" id="ai-quick-reference">
+        {/* ===== 30. AI AGENT QUICK REFERENCE ===== */}
+        <Section title="30. Quick Reference for AI Agents" id="ai-quick-reference">
           <div style={{ background: "var(--color-gray-100)", borderRadius: "16px", padding: "32px" }}>
             <h3 style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-gray-900)", marginBottom: "16px" }}>
               When building a new page:
@@ -1362,5 +2062,54 @@ function CodeExample({ title, code }: { title: string; code: string }) {
         {code}
       </pre>
     </div>
+  );
+}
+
+function DoExample({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ border: "2px solid #10b981", borderRadius: "12px", padding: "20px", position: "relative" }}>
+      <span style={{ position: "absolute", top: "-10px", left: "12px", background: "#10b981", color: "white", fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Do</span>
+      <p style={{ fontSize: "13px", fontWeight: 700, color: "var(--color-gray-900)", marginBottom: "8px" }}>{title}</p>
+      <div style={{ fontSize: "13px", color: "var(--color-gray-500)" }}>{children}</div>
+    </div>
+  );
+}
+
+function DontExample({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ border: "2px solid #ef4444", borderRadius: "12px", padding: "20px", position: "relative" }}>
+      <span style={{ position: "absolute", top: "-10px", left: "12px", background: "#ef4444", color: "white", fontSize: "11px", fontWeight: 700, padding: "2px 10px", borderRadius: "8px", textTransform: "uppercase", letterSpacing: "0.5px" }}>Don&apos;t</span>
+      <p style={{ fontSize: "13px", fontWeight: 700, color: "var(--color-gray-900)", marginBottom: "8px" }}>{title}</p>
+      <div style={{ fontSize: "13px", color: "var(--color-gray-500)" }}>{children}</div>
+    </div>
+  );
+}
+
+function MockupFrame({ label, width, height, children, bg }: { label: string; width?: string; height?: string; children: React.ReactNode; bg?: string }) {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <div style={{ width: width || "100%", height: height || "auto", background: bg || "var(--color-gray-50)", border: "2px dashed var(--color-gray-200)", borderRadius: "12px", padding: "24px", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
+        {children}
+      </div>
+      <p style={{ fontSize: "12px", fontWeight: 600, color: "var(--color-gray-500)", marginTop: "8px" }}>{label}</p>
+    </div>
+  );
+}
+
+function SpecCallout({ label }: { label: string }) {
+  return (
+    <span style={{ display: "inline-block", background: "var(--color-primary)", color: "white", fontSize: "10px", fontWeight: 700, padding: "2px 8px", borderRadius: "4px", letterSpacing: "0.3px" }}>{label}</span>
+  );
+}
+
+function PlatformSpec({ platform, profile, cover, post, story }: { platform: string; profile: string; cover: string; post: string; story?: string }) {
+  return (
+    <tr style={{ borderBottom: "1px solid var(--color-gray-100)" }}>
+      <td style={{ padding: "8px 16px 8px 0", fontWeight: 700, color: "var(--color-gray-900)", fontSize: "14px" }}>{platform}</td>
+      <td style={{ padding: "8px 16px 8px 0", color: "var(--color-gray-500)", fontSize: "13px" }}>{profile}</td>
+      <td style={{ padding: "8px 16px 8px 0", color: "var(--color-gray-500)", fontSize: "13px" }}>{cover}</td>
+      <td style={{ padding: "8px 16px 8px 0", color: "var(--color-gray-500)", fontSize: "13px" }}>{post}</td>
+      <td style={{ padding: "8px 0", color: "var(--color-gray-500)", fontSize: "13px" }}>{story || "—"}</td>
+    </tr>
   );
 }

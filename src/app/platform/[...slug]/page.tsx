@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
+import MachMiniPage from "@/components/pages/MachMiniPage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -53,6 +54,11 @@ export default async function PlatformPage({
   const fullSlug = `${PREFIX}/${slug.join("/")}`;
   const page = getPageBySlug(fullSlug);
   if (!page) notFound();
+
+  // Dedicated pages
+  if (fullSlug === "/platform/sell-anywhere/tablet-pos-mach-mini") {
+    return <MachMiniPage data={page} />;
+  }
 
   return <WhitePage data={page} />;
 }
