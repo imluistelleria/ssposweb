@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
 import MachMiniPage from "@/components/pages/MachMiniPage";
+import Mach2Page from "@/components/pages/Mach2Page";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -58,6 +59,9 @@ export default async function PlatformPage({
   // Dedicated pages
   if (fullSlug === "/platform/sell-anywhere/tablet-pos-mach-mini") {
     return <MachMiniPage data={page} />;
+  }
+  if (fullSlug === "/platform/sell-anywhere/countertop-pos-mach-2") {
+    return <Mach2Page data={page} />;
   }
 
   return <WhitePage data={page} />;

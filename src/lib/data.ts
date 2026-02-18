@@ -20,7 +20,7 @@ export const sellAnywhereGroups = [
     icon: "/images/menu/icon-pos.svg",
     title: "POS Systems & Registers",
     items: [
-      { label: "Countertop POS (Mach 2)" },
+      { label: "Countertop POS (Mach 2)", href: "/platform/sell-anywhere/countertop-pos-mach-2" },
       { label: "High-Volume Lane POS (Mach Flex)" },
       { label: "Smart Terminal POS (Mach Genius)" },
       { label: "Compare POS Hardware →" },
