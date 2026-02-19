@@ -1175,7 +1175,7 @@ function FinalCtaSection() {
 
           <h2
             style={{
-              fontSize: "var(--text-h1)",
+              fontSize: "42px",
               lineHeight: 1.1,
               fontWeight: 900,
               color: "white",
@@ -1183,8 +1183,9 @@ function FinalCtaSection() {
               marginBottom: "var(--space-6)",
               position: "relative",
               zIndex: 1,
-              maxWidth: 700,
+              maxWidth: 800,
               margin: "0 auto var(--space-6)",
+              whiteSpace: "nowrap",
             }}
           >
             Ready To Process EBT With Confidence?
