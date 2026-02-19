@@ -395,13 +395,13 @@ export default function DesignSystem() {
 
           <SubSection title="Profile Picture">
             <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
-              <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "var(--color-primary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <div style={{ width: "100px", height: "100px", borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/sspos-logo-white.svg" alt="Profile picture" style={{ height: "50px", width: "auto" }} />
+                <img src="/icon.svg" alt="Profile picture" style={{ width: "100%", height: "100%", display: "block" }} />
               </div>
               <div>
-                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", fontWeight: 700, marginBottom: "4px" }}>Logo mark on teal circle</p>
-                <p style={{ fontSize: "13px", color: "var(--color-gray-500)", lineHeight: "20px" }}>Use the white logo centered on a solid teal (#0aaeb8) circle. Ensure the logo has adequate padding (20% margin on all sides). Use the same image across all platforms for brand consistency.</p>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-900)", fontWeight: 700, marginBottom: "4px" }}>Favicon / profile picture mark</p>
+                <p style={{ fontSize: "13px", color: "var(--color-gray-500)", lineHeight: "20px" }}>Use the site favicon (<code style={{ fontSize: "12px" }}>/icon.svg</code>) — the SS mark on a teal-to-blue gradient circle. Use the same image across all social platforms for brand consistency.</p>
               </div>
             </div>
           </SubSection>
@@ -410,7 +410,7 @@ export default function DesignSystem() {
             <MockupFrame label="Cover photo — teal gradient with tagline" height="160px" bg="linear-gradient(103.17deg, #0DDED1 5.2%, #519FFF 95.19%)">
               <div style={{ textAlign: "center", color: "white" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "36px", width: "auto", marginBottom: "12px" }} />
+                <img src="/images/logo/sspos-logo-white.svg" alt="" style={{ height: "36px", width: "auto", marginBottom: "12px", display: "block", margin: "0 auto 12px" }} />
                 <p style={{ fontSize: "16px", fontWeight: 900, letterSpacing: "-0.3px" }}>Shrink Shrinkage. Operate Anywhere. Drive Sales.</p>
               </div>
             </MockupFrame>
