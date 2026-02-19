@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
+import DualPricingPage from "@/components/pages/DualPricingPage";
 
 const CATEGORY = "Payments";
 const PREFIX = "/payments";
@@ -53,6 +54,11 @@ export default async function PaymentsPage({
   const fullSlug = `${PREFIX}/${slug.join("/")}`;
   const page = getPageBySlug(fullSlug);
   if (!page) notFound();
+
+  // Dedicated pages
+  if (fullSlug === "/payments/protect-your-margin/dual-pricing") {
+    return <DualPricingPage data={page} />;
+  }
 
   return <WhitePage data={page} />;
 }

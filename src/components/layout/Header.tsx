@@ -750,7 +750,7 @@ function IndustriesPanel({ activeCategory }: { activeCategory: string }) {
   );
 }
 
-type IndustryGroup = { label: string; items: { icon: string; label: string }[] };
+type IndustryGroup = { label: string; items: { icon: string; label: string; href?: string }[] };
 
 const industriesContent: Record<string, IndustryGroup[]> = {
   "convenience-retail": [
@@ -857,7 +857,7 @@ function PaymentsPanel({ activeCategory }: { activeCategory: string }) {
             {group.items.map((item) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.href || "#"}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -914,7 +914,7 @@ const paymentsContent: Record<string, IndustryGroup[]> = {
     {
       label: "Protect Your Margin",
       items: [
-        { icon: "/images/payments/icon-dual-pricing.svg", label: "Dual Pricing" },
+        { icon: "/images/payments/icon-dual-pricing.svg", label: "Dual Pricing", href: "/payments/protect-your-margin/dual-pricing" },
         { icon: "/images/payments/icon-surcharge.svg", label: "Surcharging" },
         { icon: "/images/payments/icon-enterprise.svg", label: "Enterprise & Custom Rates" },
         { icon: "/images/payments/icon-interchange.svg", label: "Interchange & Cost Optimization" },
