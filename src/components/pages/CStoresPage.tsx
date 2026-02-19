@@ -604,24 +604,25 @@ function ConnectivitySection() {
             </p>
           </div>
 
-          {/* Right: Stacked badges */}
-          <div style={{ flex: 0, display: "flex", flexDirection: "column", gap: "16px", flexShrink: 0 }}>
+          {/* Right: Staggered badges */}
+          <div style={{ flex: 0, display: "flex", flexDirection: "column", gap: "12px", flexShrink: 0, alignItems: "flex-start" }}>
             {[
-              "Stay open.",
-              "Stay selling.",
-              "Stay connected \u2014 without interruption.",
-            ].map((text) => (
+              { text: "Stay open.", offset: 0 },
+              { text: "Stay selling.", offset: 32 },
+              { text: "Stay connected \u2014 without interruption.", offset: 64 },
+            ].map(({ text, offset }) => (
               <div
                 key={text}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   gap: "12px",
-                  padding: "14px 20px",
-                  borderRadius: "var(--radius-lg)",
+                  padding: "14px 24px",
+                  borderRadius: "var(--radius-full)",
                   background: "white",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
                   whiteSpace: "nowrap",
+                  marginLeft: offset,
                 }}
               >
                 <TealCheck />
