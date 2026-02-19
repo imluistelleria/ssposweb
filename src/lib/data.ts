@@ -140,7 +140,7 @@ export const growProtectGroups = [
     icon: "/images/menu/icon-operations.svg",
     title: "Store Compliance",
     items: [
-      { label: "EBT, eWIC & SNAP Compliance" },
+      { label: "EBT, eWIC & SNAP Compliance", href: "/platform/grow-and-protect/ebt-ewic-and-snap-compliance" },
       { label: "Age Verification" },
       { label: "Role-Based Overrides" },
     ],

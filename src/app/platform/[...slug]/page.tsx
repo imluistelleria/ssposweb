@@ -7,6 +7,7 @@ import Mach2Page from "@/components/pages/Mach2Page";
 import LoyaltySuitePage from "@/components/pages/LoyaltySuitePage";
 import MultiStoreHQPage from "@/components/pages/MultiStoreHQPage";
 import LossPreventionPage from "@/components/pages/LossPreventionPage";
+import EbtSnapPage from "@/components/pages/EbtSnapPage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -74,6 +75,9 @@ export default async function PlatformPage({
   }
   if (fullSlug === "/platform/grow-and-protect/loss-prevention-and-anti-theft-lpa") {
     return <LossPreventionPage data={page} />;
+  }
+  if (fullSlug === "/platform/grow-and-protect/ebt-ewic-and-snap-compliance") {
+    return <EbtSnapPage data={page} />;
   }
 
   return <WhitePage data={page} />;
