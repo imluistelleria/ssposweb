@@ -5,6 +5,7 @@ import WhitePage from "@/components/templates/WhitePage";
 import MachMiniPage from "@/components/pages/MachMiniPage";
 import Mach2Page from "@/components/pages/Mach2Page";
 import LoyaltySuitePage from "@/components/pages/LoyaltySuitePage";
+import MultiStoreHQPage from "@/components/pages/MultiStoreHQPage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -66,6 +67,9 @@ export default async function PlatformPage({
   }
   if (fullSlug === "/platform/grow-and-protect/loyalty-suite") {
     return <LoyaltySuitePage data={page} />;
+  }
+  if (fullSlug === "/platform/run-your-store/multi-store-hq") {
+    return <MultiStoreHQPage data={page} />;
   }
 
   return <WhitePage data={page} />;

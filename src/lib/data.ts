@@ -85,7 +85,7 @@ export const runYourStoreGroups = [
     icon: "/images/menu/icon-analytics.svg",
     title: "HQ & Analytics",
     items: [
-      { label: "Multi-Store HQ" },
+      { label: "Multi-Store HQ", href: "/platform/run-your-store/multi-store-hq" },
       { label: "Reporting & Analytics" },
     ],
   },
