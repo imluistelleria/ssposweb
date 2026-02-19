@@ -149,7 +149,7 @@ export const growProtectGroups = [
     icon: "/images/menu/icon-operations.svg",
     title: "Protection & Loss-Prevention",
     items: [
-      { label: "Loss Prevention & Anti-Theft Alerts (LPA)" },
+      { label: "Loss Prevention & Anti-Theft Alerts (LPA)", href: "/platform/grow-and-protect/loss-prevention-and-anti-theft-lpa" },
       { label: "Transaction-Linked Video Intelligence" },
       { label: "Real-Time Alerts & Exception Monitoring" },
       { label: "Manager Cards" },

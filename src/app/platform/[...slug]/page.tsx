@@ -6,6 +6,7 @@ import MachMiniPage from "@/components/pages/MachMiniPage";
 import Mach2Page from "@/components/pages/Mach2Page";
 import LoyaltySuitePage from "@/components/pages/LoyaltySuitePage";
 import MultiStoreHQPage from "@/components/pages/MultiStoreHQPage";
+import LossPreventionPage from "@/components/pages/LossPreventionPage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -70,6 +71,9 @@ export default async function PlatformPage({
   }
   if (fullSlug === "/platform/run-your-store/multi-store-hq") {
     return <MultiStoreHQPage data={page} />;
+  }
+  if (fullSlug === "/platform/grow-and-protect/loss-prevention-and-anti-theft-lpa") {
+    return <LossPreventionPage data={page} />;
   }
 
   return <WhitePage data={page} />;
