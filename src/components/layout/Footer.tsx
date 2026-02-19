@@ -41,6 +41,17 @@ export default function Footer() {
             />
             <p
               style={{
+                fontSize: "16px",
+                lineHeight: "24px",
+                color: "var(--color-gray-900)",
+                fontWeight: 700,
+                fontStyle: "italic",
+              }}
+            >
+              The speed you need...
+            </p>
+            <p
+              style={{
                 fontSize: "12px",
                 lineHeight: "18px",
                 color: "var(--color-gray-500)",

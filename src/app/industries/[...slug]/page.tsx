@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
+import CStoresPage from "@/components/pages/CStoresPage";
 
 const CATEGORY = "Industries We Serve";
 const PREFIX = "/industries";
@@ -53,6 +54,11 @@ export default async function IndustriesPage({
   const fullSlug = `${PREFIX}/${slug.join("/")}`;
   const page = getPageBySlug(fullSlug);
   if (!page) notFound();
+
+  // Dedicated pages
+  if (fullSlug === "/industries/convenience-retail/c-stores-and-mini-marts") {
+    return <CStoresPage data={page} />;
+  }
 
   return <WhitePage data={page} />;
 }

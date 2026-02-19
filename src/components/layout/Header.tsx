@@ -713,7 +713,7 @@ function IndustriesPanel({ activeCategory }: { activeCategory: string }) {
             {group.items.map((item) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.href || "#"}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -757,7 +757,7 @@ const industriesContent: Record<string, IndustryGroup[]> = {
     {
       label: "Convenience Retail",
       items: [
-        { icon: "/images/industries/icon-cstore.svg", label: "C-Stores & Mini-Marts" },
+        { icon: "/images/industries/icon-cstore.svg", label: "C-Stores & Mini-Marts", href: "/industries/convenience-retail/c-stores-and-mini-marts" },
         { icon: "/images/industries/icon-vape.svg", label: "Smoke, Vape & Tobacco Shops" },
         { icon: "/images/industries/icon-liquor.svg", label: "Liquor, Wine & Spirits" },
         { icon: "/images/industries/icon-bodega.svg", label: "Bodegas & Delis" },

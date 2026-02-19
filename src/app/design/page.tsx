@@ -158,6 +158,10 @@ export default function DesignSystem() {
 
           <SubSection title="Taglines">
             <div style={{ marginBottom: "16px" }}>
+              <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Brand Slogan</p>
+              <p style={{ fontSize: "28px", fontWeight: 900, fontStyle: "italic", color: "var(--color-gray-900)" }}>The speed you need...</p>
+            </div>
+            <div style={{ marginBottom: "16px" }}>
               <p style={{ fontSize: "12px", fontWeight: 700, color: "var(--color-gray-500)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Primary Tagline</p>
               <p style={{ fontSize: "24px", fontWeight: 900, color: "var(--color-gray-900)" }}>Shrink Shrinkage. Operate Anywhere. Drive Sales.</p>
             </div>
