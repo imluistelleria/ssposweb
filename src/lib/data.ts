@@ -21,7 +21,7 @@ export const sellAnywhereGroups = [
     title: "POS Systems & Registers",
     items: [
       { label: "Countertop POS (Mach 2)", href: "/platform/sell-anywhere/countertop-pos-mach-2" },
-      { label: "High-Volume Lane POS (Mach Flex)" },
+      { label: "High-Volume Lane POS (Mach Flex)", href: "/platform/sell-anywhere/high-volume-lane-pos-mach-flex" },
       { label: "Smart Terminal POS (Mach Genius)" },
       { label: "Compare POS Hardware →" },
     ],

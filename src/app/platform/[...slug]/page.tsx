@@ -8,6 +8,7 @@ import LoyaltySuitePage from "@/components/pages/LoyaltySuitePage";
 import MultiStoreHQPage from "@/components/pages/MultiStoreHQPage";
 import LossPreventionPage from "@/components/pages/LossPreventionPage";
 import EbtSnapPage from "@/components/pages/EbtSnapPage";
+import MachFlexPage from "@/components/pages/MachFlexPage";
 
 const CATEGORY = "Platform";
 const PREFIX = "/platform";
@@ -78,6 +79,9 @@ export default async function PlatformPage({
   }
   if (fullSlug === "/platform/grow-and-protect/ebt-ewic-and-snap-compliance") {
     return <EbtSnapPage data={page} />;
+  }
+  if (fullSlug === "/platform/sell-anywhere/high-volume-lane-pos-mach-flex") {
+    return <MachFlexPage data={page} />;
   }
 
   return <WhitePage data={page} />;
