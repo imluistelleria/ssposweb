@@ -1158,7 +1158,7 @@ const aboutContent: Record<string, IndustryGroup[]> = {
     {
       label: "Company",
       items: [
-        { icon: "/images/about/icon-story.svg", label: "Our Story & Mission" },
+        { icon: "/images/about/icon-story.svg", label: "Our Story & Mission", href: "/about/company/our-story-and-mission" },
         { icon: "/images/about/icon-careers.svg", label: "Careers" },
         { icon: "/images/about/icon-press.svg", label: "Press & Media" },
         { icon: "/images/about/icon-contact.svg", label: "Contact Us" },

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
+import OurStoryPage from "@/components/pages/OurStoryPage";
 
 const CATEGORY = "About";
 const PREFIX = "/about";
@@ -53,6 +54,11 @@ export default async function AboutPage({
   const fullSlug = `${PREFIX}/${slug.join("/")}`;
   const page = getPageBySlug(fullSlug);
   if (!page) notFound();
+
+  // Dedicated pages
+  if (fullSlug === "/about/company/our-story-and-mission") {
+    return <OurStoryPage data={page} />;
+  }
 
   return <WhitePage data={page} />;
 }
