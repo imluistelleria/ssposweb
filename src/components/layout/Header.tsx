@@ -994,7 +994,7 @@ function PartnersPanel({ activeCategory }: { activeCategory: string }) {
             {group.items.map((item) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.href || "#"}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -1049,7 +1049,7 @@ const partnersContent: Record<string, IndustryGroup[]> = {
       items: [
         { icon: "/images/partners/icon-integrations.svg", label: "View All Integrations \u2192" },
         { icon: "/images/partners/icon-quickbooks.svg", label: "QuickBooks Online" },
-        { icon: "/images/partners/icon-tax.svg", label: "DAVO Sales Tax" },
+        { icon: "/images/partners/icon-tax.svg", label: "DAVO Sales Tax", href: "/partners/integrations-and-app-marketplace/davo-sales-tax" },
         { icon: "/images/partners/icon-lottery.svg", label: "LottoShield" },
         { icon: "/images/partners/icon-bottlecapps.svg", label: "BottleCapps / CityHive" },
         { icon: "/images/partners/icon-sinpin.svg", label: "SIN PIN (Prepaid / Bill Pay)" },
@@ -1116,7 +1116,7 @@ function AboutPanel({ activeCategory }: { activeCategory: string }) {
             {group.items.map((item) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.href || "#"}
                 style={{
                   display: "flex",
                   alignItems: "center",
