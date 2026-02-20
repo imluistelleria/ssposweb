@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPagesByCategory, getPageBySlug, getCanonicalUrl } from "@/lib/pages";
 import WhitePage from "@/components/templates/WhitePage";
+import DavoSalesTaxPage from "@/components/pages/DavoSalesTaxPage";
 
 const CATEGORY = "Partners";
 const PREFIX = "/partners";
@@ -53,6 +54,11 @@ export default async function PartnersPage({
   const fullSlug = `${PREFIX}/${slug.join("/")}`;
   const page = getPageBySlug(fullSlug);
   if (!page) notFound();
+
+  // Dedicated pages
+  if (fullSlug === "/partners/integrations-and-app-marketplace/davo-sales-tax") {
+    return <DavoSalesTaxPage data={page} />;
+  }
 
   return <WhitePage data={page} />;
 }

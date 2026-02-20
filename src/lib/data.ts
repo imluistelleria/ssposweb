@@ -377,7 +377,7 @@ export const footerColumns: FooterColumn[] = [
       links: [
         { label: "Third-Party Integrations", href: "#" },
         { label: "QuickBooks Online", href: "#" },
-        { label: "DAVO Sales Tax", href: "#" },
+        { label: "DAVO Sales Tax", href: "/partners/integrations-and-app-marketplace/davo-sales-tax" },
       ],
     },
     {
